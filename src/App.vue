@@ -1,23 +1,37 @@
 <template>
-  <ProbandoVue probando = "estoy probando herencia" numero = "5"/>
+  <NavegadorVue />
+  <ProductList />
+
 
 
 </template>
 
 <script>
 
-import ProbandoVue from './components/ProbandoVue.vue'
+import ProductList from './components/ProductList.vue';
+import NavegadorVue from './components/NavegadorVue.vue';
+
 
 export default {
   name: 'App',
   components: {
-
-    ProbandoVue
+    ProductList,
+    NavegadorVue
   }
 }
 </script>
 
 <style>
+@font-face {
+  font-family: Janna LT;
+  src: url("./assets/janna-lt-regular.ttf");
+  font-weight: bold;
+}
+
+.root{
+  --color-primario: #E61620
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,5 +39,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1{
+  background-color: var(--color-primario);
+  font-family: "Janna LT";
+  font-weight: 700;
 }
 </style>
