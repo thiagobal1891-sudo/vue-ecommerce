@@ -1,6 +1,6 @@
 <template>
   <ProductList />
-
+  <ProductCollections />
 
 
 </template>
@@ -8,11 +8,13 @@
 <script>
 
 import ProductList from './components/ProductList.vue';
+import ProductCollections from './components/CollectionsVue.vue'
 
 export default {
   name: 'App',
   components: {
-    ProductList
+    ProductList,
+    ProductCollections
   }
 }
 </script>
