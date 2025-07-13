@@ -265,5 +265,9 @@ left: 1148px;
 
 .text-header a {
   color: darkblue;
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> main
 </style>
