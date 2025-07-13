@@ -1,28 +1,38 @@
 <template>
+  <BannerVue />
   <ProductList />
-
-
+  <ProductCollections />
+  <BrandsVue />
 
 </template>
 
 <script>
 
 import ProductList from './components/ProductList.vue';
+import ProductCollections from './components/CollectionsVue.vue'
+import BrandsVue from './components/BrandsVue.vue';
+import BannerVue from './components/BannerVue.vue';
 
 export default {
   name: 'App',
   components: {
-    ProductList
+    ProductList,
+    ProductCollections,
+    BrandsVue,
+    BannerVue
   }
 }
 </script>
 
 <style>
+
+
 @font-face {
   font-family: Janna LT;
   src: url("./assets/janna-lt-regular.ttf");
   font-weight: bold;
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .root{
   --color-primario: #E61620
