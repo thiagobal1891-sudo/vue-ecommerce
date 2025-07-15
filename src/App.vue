@@ -4,6 +4,8 @@
   <ProductList />
   <ProductCollections />
   <BrandsVue />
+  <FooterVue />
+  
 
 </template>
 
@@ -14,6 +16,7 @@ import NavegadorVue from './components/NavegadorVue.vue';
 import ProductCollections from './components/CollectionsVue.vue'
 import BrandsVue from './components/BrandsVue.vue';
 import BannerVue from './components/BannerVue.vue';
+import FooterVue from './FooterVue.vue';
 
 
 export default {
@@ -23,7 +26,8 @@ export default {
     NavegadorVue,
     ProductCollections,
     BrandsVue,
-    BannerVue
+    BannerVue,
+    FooterVue
   }
 }
 </script>
