@@ -3,6 +3,8 @@
   <ProductList />
   <ProductCollections />
   <BrandsVue />
+  <Bannerfooter />
+
 
 </template>
 
@@ -12,6 +14,8 @@ import ProductList from './components/ProductList.vue';
 import ProductCollections from './components/CollectionsVue.vue'
 import BrandsVue from './components/BrandsVue.vue';
 import BannerVue from './components/BannerVue.vue';
+import Bannerfooter from './components/BannerFooter.vue';
+
 
 export default {
   name: 'App',
@@ -19,7 +23,8 @@ export default {
     ProductList,
     ProductCollections,
     BrandsVue,
-    BannerVue
+    BannerVue,
+    Bannerfooter
   }
 }
 </script>
