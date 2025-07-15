@@ -1,9 +1,9 @@
 <template>
+  <NavegadorVue />  
   <BannerVue />
   <ProductList />
   <ProductCollections />
   <BrandsVue />
-
 </template>
 
 <script>
@@ -12,6 +12,8 @@ import ProductList from './components/ProductList.vue';
 import ProductCollections from './components/CollectionsVue.vue'
 import BrandsVue from './components/BrandsVue.vue';
 import BannerVue from './components/BannerVue.vue';
+import NavegadorVue from './components/NavegadorVue.vue';
+
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     ProductList,
     ProductCollections,
     BrandsVue,
-    BannerVue
+    BannerVue,
+    NavegadorVue
   }
 }
 </script>
@@ -39,12 +42,12 @@ export default {
 }
 
 #app {
+  
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 h1{
   background-color: var(--color-primario);
