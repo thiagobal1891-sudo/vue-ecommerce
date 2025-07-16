@@ -40,12 +40,12 @@
         </div>
       </div>
       
-          
+       <hr />   
    
       <div class="footer-right">
        
         <div class="social-icons">
-          <img src="./assets/redeslogo.png" alt="redes">
+          <img src="./assets/redeslogo.png" alt="social-media">
           <i class="fab fa-facebook"></i>
           <i class="fab fa-instagram"></i>
           <i class="fab fa-twitter"></i>
@@ -64,66 +64,6 @@
       </div>
     </div>
 
-   
-    <div class="mobile-footer">
-     
-      <div class="footer-section">
-        <h3>Shop by Category</h3>
-        <ul>
-          <li>Skincare</li>
-          <li>Personal Care</li>
-          <li>Handbags</li>
-          <li>Apparels</li>
-          <li>Watches</li>
-          <li>Eye Wear</li>
-          <li>Jewellery</li>
-        </ul>
-      </div>
-
-      
-      <div class="footer-section">
-        <h3>Policy</h3>
-        <div class="inline-links">
-          <span>Return</span><span>|</span>
-          <span>Terms of Use</span><span>|</span>
-          <span>Sitemap</span><span>|</span>
-          <span>Security</span><span>|</span>
-          <span>Privacy</span><span>|</span>
-          <span>EPR Compliance</span>
-        </div>
-      </div>
-
-      
-      <div class="footer-section">
-        <h3>About</h3>
-        <div class="inline-links">
-          <span>Contact Us</span><span>|</span>
-          <span>About Us</span><span>|</span>
-          <span>Careers</span><span>|</span>
-          <span>Press</span>
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="footer-bottom">
-        <div class="social-icons">
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-youtube"></i>
-        </div>
-
-        <div class="location">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>United States</span>
-        </div>
-
-        <div class="copyright">
-          ©2021|CoraLevieneAllRightsReserved
-        </div>
-      </div>
-    </div>
   </footer>
 </template>
 <script>
@@ -141,6 +81,17 @@ export default {
 
 
 <style scoped>
+
+.copyright {
+  display: flex;
+  text-align: left;
+  color: #B6B6B6;
+}
+
+.footer-columns {
+  display: flex;
+  text-align: left;
+}
 
 .footer {
   background-color: #194b63;
@@ -167,7 +118,7 @@ export default {
   margin-bottom: 10px;
   font-size: 17px;
 }
-
+ 
 .column ul {
   list-style: none;
   padding: 0;
@@ -189,7 +140,6 @@ export default {
 
 .social-icons {
   display: flex;
-  gap: 18px;
   font-size: 20px;
 }
 
@@ -197,13 +147,15 @@ export default {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 15px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  color: #ffff;
 }
 
 
-.mobile-footer {
-  display: none; 
-}
 
 .footer-section {
   margin-bottom: 24px;
@@ -232,25 +184,27 @@ export default {
   gap: 6px;
   font-size: 14px;
 }
-
-hr {
+@media screen and (max-width: 768px) {
+ hr {
+  position: relative;
+  right: 24px;
+  width: 100vw;
   border: none;
   border-top: 1px solid #4d6e80;
   margin: 24px 0;
 }
-
-.footer-bottom {
-  display: flex;
+.footer-columns {
   flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  text-align: center;
+}
+.footer-right{
+  align-items: flex-start;
+}
+}
+@media  screen and (min-width: 768px) {
+  hr {
+    display: none;
+  }
 }
 
-@media (max-width: 768px) {
-
-  .desktop-footer { display: none; }
-  .mobile-footer  { display: block; }
-}
 </style>
 
