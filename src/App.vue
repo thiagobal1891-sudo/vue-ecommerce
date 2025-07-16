@@ -4,6 +4,7 @@
   <ProductList />
   <ProductCollections />
   <BrandsVue />
+  <BannerFooter />
   <FooterVue />
   
 
@@ -17,6 +18,7 @@ import ProductCollections from './components/CollectionsVue.vue'
 import BrandsVue from './components/BrandsVue.vue';
 import BannerVue from './components/BannerVue.vue';
 import FooterVue from './FooterVue.vue';
+import BannerFooter from './components/BannerFooter.vue';
 
 
 export default {
@@ -27,7 +29,8 @@ export default {
     ProductCollections,
     BrandsVue,
     BannerVue,
-    FooterVue
+    FooterVue,
+    BannerFooter
   }
 }
 </script>
@@ -61,4 +64,14 @@ h1{
   font-family: "Janna LT";
   font-weight: 700;
 }
+
+* {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+    }
 </style>
