@@ -1,35 +1,42 @@
 <template>
-  <NavegadorVue />  
+  <NavegadorVue />
   <BannerVue />
   <ProductList />
   <ProductCollections />
   <BrandsVue />
+  <FooterVue />
+  
+
 </template>
 
 <script>
 
 import ProductList from './components/ProductList.vue';
+import NavegadorVue from './components/NavegadorVue.vue';
 import ProductCollections from './components/CollectionsVue.vue'
 import BrandsVue from './components/BrandsVue.vue';
 import BannerVue from './components/BannerVue.vue';
-import NavegadorVue from './components/NavegadorVue.vue';
+import FooterVue from './FooterVue.vue';
 
 
 export default {
   name: 'App',
   components: {
     ProductList,
+    NavegadorVue,
     ProductCollections,
     BrandsVue,
     BannerVue,
-    NavegadorVue
+    FooterVue
   }
 }
 </script>
 
 <style>
-
-
+*{
+  margin: 0px;
+  padding: 0px;
+}
 @font-face {
   font-family: Janna LT;
   src: url("./assets/janna-lt-regular.ttf");

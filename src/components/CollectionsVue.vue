@@ -31,11 +31,6 @@
       <div class="ProductCollections__products__card" v-for="product of productos" :key="product.id">
         <img :src="product.image" alt="">
         <h3>{{ product.title }}</h3>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-          rel="stylesheet">
       </div>
     </div>
   </div>
@@ -59,7 +54,7 @@ export default {
 
 <style>
 .ProductCollections {
-  width: 100vw;
+  width: 100%;
   margin: 0;
   background-color: #1B4B66;
   justify-content: center;
