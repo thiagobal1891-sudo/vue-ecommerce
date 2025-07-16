@@ -33,8 +33,10 @@ export default {
 </script>
 
 <style>
-
-
+*{
+  margin: 0px;
+  padding: 0px;
+}
 @font-face {
   font-family: Janna LT;
   src: url("./assets/janna-lt-regular.ttf");

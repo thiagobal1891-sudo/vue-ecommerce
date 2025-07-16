@@ -97,8 +97,9 @@ export default {
   background-color: #194b63;
   color: #c0d9dd;
   font-family: 'Inter', sans-serif;
-  width: 100%;
   padding: 40px 24px;
+  width: calc(100% - 48px);
+
 }
 
 
