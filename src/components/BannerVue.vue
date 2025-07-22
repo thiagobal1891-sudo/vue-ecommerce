@@ -18,7 +18,7 @@
                 </div>
                
                <div class="card__image__content__button">
-                <button><p>➜ See more </p></button>
+                <button> <p class="arrow_icon">➜</p>  <p>See more </p></button>
                </div>
             </div>
         </div>
@@ -47,13 +47,13 @@ export default {
             id:0,
             title:"Carry your Funk",
             text:"Trendy handbags collection for your party animal",
-            image:"https://png.pngtree.com/thumb_back/fh260/back_our/20190614/ourmid/pngtree-happy-shopping-light-spot-poster-background-image_122448.jpg"
+            image:"https://i.pinimg.com/736x/01/c4/00/01c40028627c7ce90fb1f7d94ba1856c.jpg"
         },
         {
             id:1,
             title:"Carry your Funk",
             text:"Trendy handbags collection for your party animal",
-            image: "https://png.pngtree.com/thumb_back/fh260/back_our/20190614/ourmid/pngtree-happy-shopping-light-spot-poster-background-image_122448.jpg"
+            image: "https://i.pinimg.com/736x/01/c4/00/01c40028627c7ce90fb1f7d94ba1856c.jpg"
         }
       ]
     }
@@ -71,7 +71,7 @@ export default {
 .card__image__content{
 width: 759px;
 height: 316px;
-
+padding-left: 40px;
 opacity: 1;
 top: 196px;
 left: 563px;
@@ -82,7 +82,6 @@ backdrop-filter: blur(5px)
 } 
 .card__image__content__title{
 display: flex;
-margin-left: 40px;
 width: 853px;
 height: 84px;
 opacity: 1;
@@ -101,7 +100,6 @@ vertical-align: middle;
 .card__image__content__text{
 display: flex;
 text-align: left;
-margin-left: 40px;
 width: 530px;
 height: 50px;
 opacity: 1;
@@ -131,7 +129,6 @@ color: #1B4B66;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 40px;
   gap: 10px;
 }
 
@@ -150,5 +147,10 @@ color: #1B4B66;
   display: flex;
   justify-content: flex-end;
 
+}
+.arrow_icon {
+  width: 20px;
+  font-size: 1.5rem;
+  padding-bottom: 3px;
 }
 </style>
