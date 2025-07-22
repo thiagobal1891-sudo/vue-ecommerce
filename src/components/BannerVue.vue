@@ -25,7 +25,7 @@ export default {
 
 <style>
 .banner {
-  background-image: url("file:///C:/Users/Lenovo/Downloads/393d5ea0b10a20326ef0961ac5866255161d378d.jpg");
+  background-image: url("./../assets/components/BannerVue/imgbanner.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 15px;
