@@ -1,122 +1,96 @@
 <template>
-  <swiper
-    :slidesPerView="1"
-    :spaceBetween="50"
-    :loop="true"
-    :pagination="{ clickable: true }"
-    :autoplay="autoplayConfig"
-    :navigation = "false"
-  >
-    <swiper-slide v-for="card in cards" :key="card.id">
-        <div class="card__image" :style="{ backgroundImage: 'url(' + card.image + ')' }">
-            <div class="card__image__content">
-                <div class="card__image__content__title">
-                    {{card.title}} 
-                </div>
-                <div class="card__image__content__text">
-                    {{card.text }}
-                </div>
-               
-               
-            </div>
-        </div>
-    </swiper-slide>
-  </swiper>
+<div class="banner">
+  <div class="banner-contenido">
+    <h2>Carry your Funk</h2>
+    <p>Trendy handbags collection for your <br> party animal</p>
+    <button>➝ See more</button>
+  </div>
+</div>
+
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/swiper-bundle.css'
+
 
 export default {
   name: 'BannerVue',
   components: {
-    Swiper,
-    SwiperSlide
   },
   data() {
     return {
-      autoplayConfig: {
-        delay: 3000,   // 3 segundos entre cada slide
-        disableOnInteraction: false // No desactivar autoplay cuando se interactúa
-      },
-      cards:[
-        {
-            id:0,
-            title:"Carry your Funk",
-            text:"Trendy handbags collection for your party animal",
-            image:"https://static.vecteezy.com/system/resources/previews/028/122/762/large_2x/backpack-with-bright-school-stationery-on-isolate-background-banner-design-back-to-school-concept-photo.jpg"
-        },
-        {
-            id:1,
-            title:"Carry your Funk",
-            text:"Trendy handbags collection for your party animal",
-            image:"https://static.vecteezy.com/system/resources/previews/028/122/762/large_2x/backpack-with-bright-school-stationery-on-isolate-background-banner-design-back-to-school-concept-photo.jpg"
-        }
-      ]
     }
   }
 }
 </script>
 
 <style>
-/* Agrega estilos si es necesario */
-.swiper {
-  width: 100%;
-  height: 200px;
+.banner {
+  background-image: url("file:///C:/Users/Lenovo/Downloads/393d5ea0b10a20326ef0961ac5866255161d378d.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 1436px;
+  margin: 20px auto;
+  height: 514px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
 }
 
-.card__image__content{
-/* Rectangle 35 */
-
-position: absolute;
-left: 41.77%;
-right: -6.1%;
-top: 8.33%;
-bottom: 8.33%;
-
-background: rgba(222, 222, 222, 0.7);
-backdrop-filter: blur(2.5px);
-/* Note: backdrop-filter has minimal browser support */
-border-radius: 8px;
-
-}
-.card__image__content__title{
-/* Carry your Funk */
-
-
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 24px;
-line-height: 26px;
-/* or 108% */
-display: flex;
-align-items: center;
-
-/* Primary */
-color: #1B4B66;
-}
-
-.card__image__content__text{
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 16px;
-/* or 133% */
-display: flex;
-align-items: center;
-
-/* Primary */
-color: #1B4B66;
-
-
+.banner-contenido {
+  position: absolute;
+  top: 30%;
+  width: 759px;
+  height: 316px;
+  background: rgba(222, 222, 222, 0.7);
+  backdrop-filter: blur(2.5px);
+  border-radius: 24px;
+  padding: 30px;
 }
 
 
+.banner-contenido h2 {
+  font-size: 60px;
+  color: #1B4B66;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  position: absolute;
+  top: 0;
 
+}
 
+.banner-contenido p {
+  font-size: 28px;
+  color: #1B4B66;
+  position: absolute;
+  top: 40%;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.banner-contenido button {
+  background-color: #1B4B66;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 80%;
+}
+
+.banner-contenido button:hover {
+  background-color: #1B4B66;
+}
 </style>
+
+
+
+
