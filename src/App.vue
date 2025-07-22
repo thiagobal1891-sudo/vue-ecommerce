@@ -1,11 +1,14 @@
 <template>
-  <NavegadorVue />
-  <BannerVue />
-  <ProductList />
-  <ProductCollections />
-  <BrandsVue />
-  <BannerFooter />
-  <FooterVue />
+  <div class="app">
+    <NavegadorVue />
+    <BannerVue />
+    <ProductList />
+    <ProductCollections />
+    <BrandsVue />
+    <BannerFooter />
+    <FooterVue />
+  </div>
+
   
 
 </template>
@@ -73,5 +76,12 @@ h1{
       margin: 0;
       font-family: 'Arial', sans-serif;
       padding: 20px;
+      background-color: rgb(203, 203, 203);
+    }
+    .app{
+      max-width: 1280px;
+      width: 100%;
+      margin: auto;
+      background-color: white;
     }
 </style>

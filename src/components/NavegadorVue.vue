@@ -73,7 +73,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0 10px;
+
   z-index: 1000;
   background: white;
 }
