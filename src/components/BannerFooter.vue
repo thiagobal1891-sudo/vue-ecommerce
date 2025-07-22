@@ -175,10 +175,7 @@ export default {
       .card h3 {
         font-size: 20px;
       }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5c22470f21a49fcb2b18586b12ce673f70efc4fa
       .card h4 {
         font-size: 20px;
       }
