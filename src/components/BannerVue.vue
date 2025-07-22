@@ -17,7 +17,9 @@
                     {{card.text }}
                 </div>
                
-               
+               <div class="card__image__content__button">
+                <button><p>➜ See more </p></button>
+               </div>
             </div>
         </div>
     </swiper-slide>
@@ -37,21 +39,21 @@ export default {
   data() {
     return {
       autoplayConfig: {
-        delay: 3000,   // 3 segundos entre cada slide
-        disableOnInteraction: false // No desactivar autoplay cuando se interactúa
+        delay: 3000,  
+        disableOnInteraction: false
       },
       cards:[
         {
             id:0,
             title:"Carry your Funk",
             text:"Trendy handbags collection for your party animal",
-            image:"https://static.vecteezy.com/system/resources/previews/028/122/762/large_2x/backpack-with-bright-school-stationery-on-isolate-background-banner-design-back-to-school-concept-photo.jpg"
+            image:"https://png.pngtree.com/thumb_back/fh260/back_our/20190614/ourmid/pngtree-happy-shopping-light-spot-poster-background-image_122448.jpg"
         },
         {
             id:1,
             title:"Carry your Funk",
             text:"Trendy handbags collection for your party animal",
-            image:"https://static.vecteezy.com/system/resources/previews/028/122/762/large_2x/backpack-with-bright-school-stationery-on-isolate-background-banner-design-back-to-school-concept-photo.jpg"
+            image: "https://png.pngtree.com/thumb_back/fh260/back_our/20190614/ourmid/pngtree-happy-shopping-light-spot-poster-background-image_122448.jpg"
         }
       ]
     }
@@ -60,63 +62,93 @@ export default {
 </script>
 
 <style>
-/* Agrega estilos si es necesario */
+
 .swiper {
   width: 100%;
   height: 200px;
 }
 
 .card__image__content{
-/* Rectangle 35 */
+width: 759px;
+height: 316px;
 
-position: absolute;
-left: 41.77%;
-right: -6.1%;
-top: 8.33%;
-bottom: 8.33%;
+opacity: 1;
+top: 196px;
+left: 563px;
+border-radius: 24px;
 
 background: rgba(222, 222, 222, 0.7);
-backdrop-filter: blur(2.5px);
-/* Note: backdrop-filter has minimal browser support */
-border-radius: 8px;
-
-}
+backdrop-filter: blur(5px)
+} 
 .card__image__content__title{
-/* Carry your Funk */
-
-
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 24px;
-line-height: 26px;
-/* or 108% */
 display: flex;
-align-items: center;
+margin-left: 40px;
+width: 853px;
+height: 84px;
+opacity: 1;
+color: rgba(27, 75, 102, 1);
 
-/* Primary */
-color: #1B4B66;
+font-family: Inter;
+font-weight: 800;
+font-size: 50px;
+
+line-height: 84px;
+letter-spacing: 0%;
+vertical-align: middle;
+
 }
 
 .card__image__content__text{
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 16px;
-/* or 133% */
 display: flex;
-align-items: center;
+text-align: left;
+margin-left: 40px;
+width: 530px;
+height: 50px;
+opacity: 1;
 
-/* Primary */
+font-family: Inter;
+font-weight: 500;
+font-size: 20px;
+line-height: 38px;
+letter-spacing: 0%;
+vertical-align: middle;
+
+
 color: #1B4B66;
 
 
 }
+.card__image__content__button button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 44px;
+  flex-direction: row;
+  padding: 10px 20px;
+  background-color: #1B4B66;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 40px;
+  gap: 10px;
+}
 
+.card__image__content__button p {
+  margin: 0;
+}
+.card__image__content img {
+  width: 1436px;
+  height: 514px;
+  background-repeat: no-repeat;      
+  background-position: center;       
+  background-size: contain;  
+  
+}
+.card__image {
+  display: flex;
+  justify-content: flex-end;
 
-
-
+}
 </style>
