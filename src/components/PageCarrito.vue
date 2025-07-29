@@ -172,7 +172,7 @@ export default {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* alinea el contenido a la izquierda */
+  align-items: flex-start; 
 }
 
 .coupon-label {
