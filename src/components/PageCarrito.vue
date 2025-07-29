@@ -44,9 +44,9 @@
       <button class="continue">Continue Shopping</button>
     </div>
         </div>
-      <div class="coupon-wrapper">
-        <label class="coupon-label">Apply Coupon Code</label>
-        <div class="coupon-box">
+      <div class="cupones">
+        <label class="cupon-texto">Apply Coupon Code</label>
+        <div class="cupon-box">
           <input type="text" placeholder="Apply Coupon Code" />
           <button>CHECK</button>
         </div>
@@ -167,7 +167,7 @@ export default {
     border-radius: 8px;
     }
 
-.coupon-wrapper {
+.cupones {
   margin-top: 40px;
   padding: 20px;
   display: flex;
@@ -175,12 +175,12 @@ export default {
   align-items: flex-start; 
 }
 
-.coupon-label {
+.cupon-texto {
   margin-bottom: 8px;
   font-weight: 500;
 }
 
-.coupon-box {
+.cupon-box {
   display: flex;
   align-items: center;
   background-color: #f2f2f2;
@@ -191,7 +191,7 @@ export default {
   overflow: hidden;
 }
 
-.coupon-box input {
+.cupon-box input {
   border: none;
   background: transparent;
   padding: 15px;
@@ -200,7 +200,7 @@ export default {
   outline: none;
 }
 
-.coupon-box button {
+.cupon-box button {
   background: transparent;
   border: none;
   color: #003b5c;
@@ -209,7 +209,7 @@ export default {
   cursor: pointer;
 }
 
-.coupon-box button:hover {
+.cupon-box button:hover {
   text-decoration: underline;
 }
 
