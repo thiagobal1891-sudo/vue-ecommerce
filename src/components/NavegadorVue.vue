@@ -28,8 +28,7 @@
   </div>
   <div class="nav-right">
     <img src="./../assets/trailing-icon.png" alt="icons-mobile">
-
-  </div>
+</div>
 </nav>
   </header>
 
@@ -40,6 +39,11 @@
       <a href="./">here</a>
     </p>
   </div>
+ 
+  
+
+    
+
 </template>
 
 <script>
@@ -198,9 +202,9 @@ export default {
   margin-top: 80px;
 }
 
-.text-header a {
-  color: darkblue;
+.text-header a {  
   text-decoration: underline;
+  color: darkblue;
 }
 
 
