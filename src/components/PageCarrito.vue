@@ -1,5 +1,5 @@
 <template>
-<h2 style="text-align:center;">My Cart</h2>
+<h2 style="text-align:left;">My Cart</h2>
 
 <div class="carrito">
     <div class="items">
