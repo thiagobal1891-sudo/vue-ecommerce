@@ -4,6 +4,7 @@
   <ProductCollections />
   <BrandsVue />
   <Bannerfooter />
+  <PageCarrito />
 
 
 </template>
@@ -15,6 +16,7 @@ import ProductCollections from './components/CollectionsVue.vue'
 import BrandsVue from './components/BrandsVue.vue';
 import BannerVue from './components/BannerVue.vue';
 import Bannerfooter from './components/BannerFooter.vue';
+import PageCarrito from './components/PageCarrito.vue';
 
 
 export default {
@@ -24,7 +26,8 @@ export default {
     ProductCollections,
     BrandsVue,
     BannerVue,
-    Bannerfooter
+    Bannerfooter,
+    PageCarrito
   }
 }
 </script>
