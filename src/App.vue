@@ -1,39 +1,14 @@
 <template>
   <div class="app">
-    <NavegadorVue />
-    <BannerVue />
-    <ProductList />
-    <ProductCollections />
-    <BrandsVue />
-    <BannerFooter />
-    <FooterVue />
+    <router-view />
   </div>
-
-  
-
 </template>
 
 <script>
-
-import ProductList from './components/ProductList.vue';
-import NavegadorVue from './components/NavegadorVue.vue';
-import ProductCollections from './components/CollectionsVue.vue'
-import BrandsVue from './components/BrandsVue.vue';
-import BannerVue from './components/BannerVue.vue';
-import FooterVue from './FooterVue.vue';
-import BannerFooter from './components/BannerFooter.vue';
-
-
 export default {
   name: 'App',
   components: {
-    ProductList,
-    NavegadorVue,
-    ProductCollections,
-    BrandsVue,
-    BannerVue,
-    FooterVue,
-    BannerFooter
+
   }
 }
 </script>
