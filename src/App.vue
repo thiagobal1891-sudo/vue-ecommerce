@@ -3,6 +3,7 @@
   <BannerVue />
   <ProductList />
   <ProductCollections />
+  <PageProduct />
   <BrandsVue />
   <FooterVue />
   
@@ -17,6 +18,7 @@ import ProductCollections from './components/CollectionsVue.vue'
 import BrandsVue from './components/BrandsVue.vue';
 import BannerVue from './components/BannerVue.vue';
 import FooterVue from './FooterVue.vue';
+import PageProduct from './components/PageProduct.vue';
 
 
 export default {
@@ -27,7 +29,8 @@ export default {
     ProductCollections,
     BrandsVue,
     BannerVue,
-    FooterVue
+    FooterVue, 
+    PageProduct
   }
 }
 </script>
