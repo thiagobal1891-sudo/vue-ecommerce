@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 import HomePage from './pages/HomePage.vue'
 import ErrorPage from './pages/ErrorPage.vue'
 import CategoryPage from './pages/CategoryPage.vue'
+import MyCartPage from './pages/MyCartPage.vue'
 
 const routes = [
     {
@@ -12,6 +13,9 @@ const routes = [
     },
     {
         path:'/category', component: CategoryPage
+    },
+    {
+        path:'/MyCart', component: MyCartPage
     },
     {
         path:'/home', component: HomePage
