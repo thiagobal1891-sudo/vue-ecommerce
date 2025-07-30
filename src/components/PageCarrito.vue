@@ -178,6 +178,8 @@ export default {
 .cupon-texto {
   margin-bottom: 8px;
   font-weight: 500;
+  color: #1B4B66;
+  border-bottom: 1px solid #FFFFFF;
 }
 
 .cupon-box {
