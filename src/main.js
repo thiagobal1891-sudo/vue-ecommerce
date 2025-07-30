@@ -4,10 +4,17 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import { createPinia } from 'pinia'
 import HomePage from './pages/HomePage.vue'
 import ErrorPage from './pages/ErrorPage.vue'
+import CategoryPage from './pages/CategoryPage.vue'
 
 const routes = [
     {
         path:'/', component: HomePage
+    },
+    {
+        path:'/category', component: CategoryPage
+    },
+    {
+        path:'/home', component: HomePage
     },
     {
         path: '/:pathMatch(.*)*', component: ErrorPage

@@ -1,14 +1,21 @@
 <template>
   <div class="app">
+    <NavegadorVue />
     <router-view />
+    <FooterVue />
   </div>
 </template>
 
 <script>
+
+import FooterVue from './components/FooterVue.vue';
+import NavegadorVue from './components/NavegadorVue.vue';
+
 export default {
   name: 'App',
   components: {
-
+    FooterVue,
+    NavegadorVue
   }
 }
 </script>

@@ -45,7 +45,7 @@
       <div class="footer-right">
        
         <div class="social-icons">
-          <img src="./assets/redeslogo.png" alt="social-media">
+          <img src="../assets/redeslogo.png" alt="social-media">
           <i class="fab fa-facebook"></i>
           <i class="fab fa-instagram"></i>
           <i class="fab fa-twitter"></i>
@@ -54,7 +54,7 @@
 
         <div class="location">
           <i class="fas fa-map-marker-alt"></i>
-          <img src="./assets/location.png" alt="">
+          <img src="../assets/location.png" alt="">
           United States
         </div>
 
