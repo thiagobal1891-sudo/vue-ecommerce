@@ -1,36 +1,21 @@
 <template>
-  <NavegadorVue />
-  <BannerVue />
-  <ProductList />
-  <ProductCollections />
-  <ProductPageVue />
-  <BrandsVue />
-  <FooterVue />
-    
-
+  <div class="app">
+    <NavegadorVue />
+    <router-view />
+    <FooterVue />
+  </div>
 </template>
 
 <script>
 
-import ProductList from './components/ProductList.vue';
+import FooterVue from './components/FooterVue.vue';
 import NavegadorVue from './components/NavegadorVue.vue';
-import ProductCollections from './components/CollectionsVue.vue'
-import BrandsVue from './components/BrandsVue.vue';
-import BannerVue from './components/BannerVue.vue';
-import FooterVue from './FooterVue.vue';
-import ProductPageVue from './components/ProductPageVue.vue';
-
 
 export default {
   name: 'App',
   components: {
-    ProductList,
-    NavegadorVue,
-    ProductCollections,
-    BrandsVue,
-    BannerVue,
     FooterVue,
-    ProductPageVue
+    NavegadorVue
   }
 }
 </script>
@@ -64,4 +49,21 @@ h1{
   font-family: "Janna LT";
   font-weight: 700;
 }
+
+* {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      background-color: rgb(203, 203, 203);
+    }
+    .app{
+      max-width: 1280px;
+      width: 100%;
+      margin: auto;
+      background-color: white;
+    }
 </style>
