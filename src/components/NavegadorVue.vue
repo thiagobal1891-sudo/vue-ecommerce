@@ -39,10 +39,6 @@
       <a href="./">here</a>
     </p>
   </div>
- 
-  
-
-    
 
 </template>
 

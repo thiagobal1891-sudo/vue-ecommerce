@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage.vue'
 import ErrorPage from './pages/ErrorPage.vue'
 import CategoryPage from './pages/CategoryPage.vue'
 import MyCartPage from './pages/MyCartPage.vue'
-import PrductView from './pages/PrductView.vue'
+import ProductView from './pages/ProductView.vue'
 const routes = [
     {
         path:'/', component: HomePage
@@ -24,7 +24,7 @@ const routes = [
         path: '/:pathMatch(.*)*', component: ErrorPage
     },
     {
-        path: '/ProductView', component: PrductView
+        path:'/ProductView', component: ProductView
     }
 ]
 

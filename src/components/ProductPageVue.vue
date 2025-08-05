@@ -50,9 +50,9 @@
       <div class="quantity">
         <p>Quantity:</p>
       <div class="quantity-buttons">
-        <button @click="decrease"><img src='./../assets/mas.png' alt="iconmax"></button>
+        <button @click="decrease">-</button>
         <span>{{ quantity }}</span>
-        <button @click="increase"><img src='./../assets/icons8-subtract-50.png' alt="iconmin"></button>
+        <button @click="increase">+</button>
       </div>
       </div>
 
@@ -62,12 +62,20 @@
       </div>
 
 
-      <div class="actions">
-        <button class="add-to-bag">Add to bag</button>
-        <button class="add-to-wishlist">Add To Wishlist</button>
+     <div class="actions">
+        <button class="add-to-bag">
+          <img src="@/assets/bag.png" alt="logo" class="logo" />
+          <span class="text">Add To Bag</span>
+        </button>
+        <div class="actions">
+        <button class="add-to-wishlist">
+          <img src="@/assets/wishlist.png" alt="logo" class="logo">
+          <span class="text_1">Add To Wishlist</span>
+        </button>
+        </div>
       </div>
     </div>
-  </div>
+ </div>
 </template>
 
 <script setup>
@@ -97,7 +105,7 @@ const getStarClass = (i) => {
 
 .product-card {
   display: flex;
-  max-width: 900px;
+  width: 100%;
   margin: 30px auto;
   padding: 20px;
   border-radius: 12px;
@@ -115,11 +123,17 @@ const getStarClass = (i) => {
 }
 
 .product-details {
-  flex: 1;
+  width: 814px;
+height: 624px;
+top: 144px;
+left: 649px;
+opacity: 1;
+
 }
 h2{
-  width: 106px;
+   width: 106px;
   height: 44px;
+
   text-align: left;
  color: rgba(19, 16, 30, 1);
   font-family: Inter;
@@ -319,7 +333,9 @@ width: 24px;
 height: 24px;
 
 
-
+border: none;
+font-weight: 900;
+background-color: transparent;
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -368,26 +384,62 @@ flex-grow: 0;
 
 .actions {
   display: flex;
+  width: 592px;
+  height: 44px;
+  gap: 24px;
+
   gap: 10px;
 }
 
 .add-to-bag,
 .add-to-wishlist {
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 44px;
+  opacity: 1;
+  border-radius: 8px;
+  gap: 8px;
+  border-width: 2px;
+
 }
 
 .add-to-bag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  width: 328px;
+  padding: 10px 20px;
   background-color: #004080;
   color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-to-bag .logo {
+  width: 20px;
+  height: 20px;
 }
 
 .add-to-wishlist {
+  display: flex;
   background-color: white;
   border: 1px solid #004080;
   color: #004080;
+
+  font-family: Inter;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+
+
 }
 </style>
 
