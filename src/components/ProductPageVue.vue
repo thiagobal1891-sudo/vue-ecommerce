@@ -11,23 +11,7 @@
       <h2>Coach</h2>
       <p class="description">Leather Coach Bag with adjustable starps.</p>
 
-     
-      <div class="stars">
-        <svg
-          v-for="(star, index) in 5"
-          :key="index"
-          viewBox="0 0 20 20"
-          class="star"
-          :class="getStarClass(index + 1)"
-        >
-          <polygon
-            points="10,1 12.59,6.91 19,7.27 14,11.64 15.45,18 10,14.27 4.55,18 6,11.64 1,7.27 7.41,6.91"
-          />
-        </svg>
-        <span class="ratings">(1000+ ratings)</span>
-      </div>
-
-
+     <RantingVue rate="2.5" count="45" id="0"/>
       <div class="price">
         <span class="current-price">${{ totalPrice.toFixed(2) }}</span>
         <span class="old-price">${{ basePrice.toFixed(2) }}</span>
@@ -79,9 +63,9 @@
 </template>
 
 <script setup>
+import RantingVue from "./RantingVue.vue";
 import { ref, computed } from "vue";
 
-const rating = ref(3.5);
 const quantity = ref(1);
 const unitPrice = 39.33;
 const basePrice = 78.66;
@@ -93,12 +77,6 @@ const decrease = () => {
 
 
 const totalPrice = computed(() => quantity.value * unitPrice);
-
-const getStarClass = (i) => {
-  if (i <= Math.floor(rating.value)) return "filled";
-  if (i - rating.value < 1) return "half";
-  return "";
-};
 </script>
 
 <style>

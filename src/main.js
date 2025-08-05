@@ -2,8 +2,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { createPinia } from 'pinia'
-import Vue3StarRatings from 'vue3-star-ratings'
-
 import HomePage from './pages/HomePage.vue'
 import ErrorPage from './pages/ErrorPage.vue'
 import CategoryPage from './pages/CategoryPage.vue'
@@ -30,5 +28,4 @@ const app = createApp(App)
 
 app.use(router)
 app.use(pinia)
-app.component('vue3-star-ratings', Vue3StarRatings)
 app.mount('#app') 

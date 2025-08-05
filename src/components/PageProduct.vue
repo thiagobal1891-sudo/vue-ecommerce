@@ -9,19 +9,13 @@
 
     <div class="product-details">
       <h2>Coach</h2>
-      <p class="description">Leather Coach Bag with adjustable starps.</p>
-
-     
+      <p class="description">sadfgasdgasdgsdg.</p>
+asdfasdfdsa
+      <RantingVue rate = "4.5" count = "260" id="1"/>
+      asdfsadfsadf
        <div class="rating-container">
       <div style="padding: 30px">
     <h2>Valoración</h2>
-    <vue3-star-ratings
-      :star-size="40"
-      :number-of-stars="5"
-      star-color="gold"
-      inactive-color="#ccc"
-      :show-rating="false"
-    />
   </div>
 </div>
 
@@ -73,9 +67,8 @@
 
 <script>
 import { ref, computed } from "vue";
-
-const rating = ref(0)
-
+import RantingVue from "./RantingVue.vue";
+import RantingVue from "./RantingVue.vue";
 
 const quantity = ref(1);
 const unitPrice = 39.33;
