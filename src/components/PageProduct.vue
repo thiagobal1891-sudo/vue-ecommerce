@@ -12,20 +12,18 @@
       <p class="description">Leather Coach Bag with adjustable starps.</p>
 
      
-      <div class="stars">
-        <svg
-          v-for="(star, index) in 5"
-          :key="index"
-          viewBox="0 0 20 20"
-          class="star"
-          :class="getStarClass(index + 1)"
-        >
-          <polygon
-            points="10,1 12.59,6.91 19,7.27 14,11.64 15.45,18 10,14.27 4.55,18 6,11.64 1,7.27 7.41,6.91"
-          />
-        </svg>
-        <span class="ratings">(1000+ ratings)</span>
-      </div>
+       <div class="rating-container">
+      <div style="padding: 30px">
+    <h2>Valoración</h2>
+    <vue3-star-ratings
+      :star-size="40"
+      :number-of-stars="5"
+      star-color="gold"
+      inactive-color="#ccc"
+      :show-rating="false"
+    />
+  </div>
+</div>
 
 
       <div class="price">
@@ -73,10 +71,12 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import { ref, computed } from "vue";
 
-const rating = ref(3.5);
+const rating = ref(0)
+
+
 const quantity = ref(1);
 const unitPrice = 39.33;
 const basePrice = 78.66;
@@ -89,11 +89,6 @@ const decrease = () => {
 
 const totalPrice = computed(() => quantity.value * unitPrice);
 
-const getStarClass = (i) => {
-  if (i <= Math.floor(rating.value)) return "filled";
-  if (i - rating.value < 1) return "half";
-  return "";
-};
 </script>
 
 <style>
@@ -140,8 +135,8 @@ h2{
 .description {
   color: #666;
   text-align: left;
-  width: 410;
-  height: 26;
+  width: 410px;
+  height: 26px;
   opacity: 1;
 
   font-family: Inter;
@@ -151,31 +146,23 @@ h2{
   letter-spacing: 0%;
   vertical-align: middle;
 
-}
-
-.stars {
+}.rating-container {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   margin: 10px 0;
 }
-
-.star {
-  width: 20px;
-  height: 20px;
-  fill: #ccc;
+.rating-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-polygon::hover {
-    color: rgba(255, 140, 75, 1);
+.rating-value {
+  font-size: 14px;
+  color: #555;
 }
-
-.star.half {
-  fill: url(#halfGrad);
-}
-
-.ratings {
-  margin-left: 10px;
+.rating-text {
   font-size: 0.9em;
   color: #888;
 }
@@ -273,33 +260,15 @@ polygon::hover {
   line-height: 26px;
   letter-spacing: 0%;
   vertical-align: middle;
-
 }
-  .input-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 390px;
-    height: 52px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f2f2f2;
-    padding: 0 15px;
-    font-family: sans-serif;
-    font-size: 14px;
-  }
+.star svg {
+  transition: fill 0.3s ease;
+}
 
-  .input-wrapper span.placeholder {
-    color: #666;
-  }
+.star svg:hover {
+  fill: gold !important;
+}
 
-  .input-wrapper button {
-    background: none;
-    border: none;
-    color: #0a3d62;
-    font-weight: bold;
-    cursor: pointer;
-  }
 .quantity {
   margin: 15px 0;
   display: flex;
@@ -317,11 +286,10 @@ polygon::hover {
 
 .quantity-buttons button{
 
-/* Stepper */
 
 box-sizing: border-box;
 
-/* Auto layout */
+
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -331,11 +299,10 @@ padding: 0px;
 width: 73px;
 height: 30px;
 
-/* Primary */
+
 border: 1px solid #1B4B66;
 border-radius: 4px;
 
-/* Inside auto layout */
 flex: none;
 order: 1;
 flex-grow: 0;

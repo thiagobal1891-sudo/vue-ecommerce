@@ -99,9 +99,8 @@ top: 903px;
    background-color: rgba(27, 75, 102, 1); 
 }
 .tabs button {
-    width: 189;
-    height: 32;
-    angle: 0 deg;
+    width: 189px;
+    height: 32px;
     opacity: 1;
     border-radius: 8px;
     padding-top: 6px;
