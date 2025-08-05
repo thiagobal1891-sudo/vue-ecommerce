@@ -1,14 +1,16 @@
 <template>
     <ProductPageVue />
+    <ProductDescriptionVue />
 </template>
 <script>
 
 import ProductPageVue from '@/components/ProductPageVue.vue';
-
+import ProductDescriptionVue from '@/components/ProductDescriptionVue.vue'
 export default {
   name: 'ProductView',
   components: {
-    ProductPageVue
+    ProductPageVue,
+    ProductDescriptionVue
   },
   data(){
     return{
@@ -19,5 +21,7 @@ export default {
 </script>
 
 <style>
-
+.text-header {
+  display: none;
+}
 </style>

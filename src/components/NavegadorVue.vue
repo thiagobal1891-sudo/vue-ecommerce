@@ -67,13 +67,14 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position:static;
   top: 0;
   left: 0;
   padding: 0 20px;
   background: white;
   z-index: 1000;
   box-sizing: border-box;
+
 }
 
 .desktop-only {
