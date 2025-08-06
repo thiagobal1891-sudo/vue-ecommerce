@@ -156,7 +156,7 @@ export default {
   padding: 0 16px;
   height: 60px;
   width: 100%;
-  position: fixed;
+  position: static;
   top: 0;
   left: 0;
   background: white;
@@ -203,6 +203,7 @@ export default {
   text-decoration: underline;
   color: darkblue;
 }
+
 
 
 </style>

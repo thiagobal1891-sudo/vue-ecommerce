@@ -39,19 +39,19 @@
         <button @click="increase">+</button>
       </div>
       </div>
-
+      <div class="coupon-container">
       <div class="coupon">
         <p>Get upto 30% Off on order value above $100</p>
         <button>Use Code <strong>ORDER100</strong></button>
       </div>
-
+      </div>
 
      <div class="actions">
         <button class="add-to-bag">
           <img src="@/assets/bag.png" alt="logo" class="logo" />
           <span class="text">Add To Bag</span>
         </button>
-        <div class="actions">
+        <div class="actions_wishlist">
         <button class="add-to-wishlist">
           <img src="@/assets/wishlist.png" alt="logo" class="logo">
           <span class="text_1">Add To Wishlist</span>
@@ -140,33 +140,6 @@ h2{
   letter-spacing: 0%;
   vertical-align: middle;
 
-}
-
-.stars {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin: 10px 0;
-}
-
-.star {
-  width: 20px;
-  height: 20px;
-  fill: #ccc;
-}
-
-polygon::hover {
-    color: rgba(255, 140, 75, 1);
-}
-
-.star.half {
-  fill: url(#halfGrad);
-}
-
-.ratings {
-  margin-left: 10px;
-  font-size: 0.9em;
-  color: #888;
 }
 
 .price {
@@ -346,6 +319,7 @@ flex-grow: 0;
 }
 
 .coupon {
+  width: calc(100% - 30%);
   background-color: #eef6ff;
   padding: 10px;
   margin: 15px 0;
@@ -368,7 +342,14 @@ flex-grow: 0;
 
   gap: 10px;
 }
+.actions_wishlist {
+  display: flex;
+  width: 592px;
+  height: 44px;
+  gap: 24px;
 
+  gap: 10px;
+}
 .add-to-bag,
 .add-to-wishlist {
   justify-content: center;
@@ -417,7 +398,50 @@ letter-spacing: 0%;
 text-align: center;
 vertical-align: middle;
 
+}
+@media screen and (max-width: 768px) {
+    .product-card {
+      flex-wrap: wrap;
+    }
+    .product-card img {
+      min-width: 348px;
+      min-height: 340px;
+      opacity: 1;
+      top: 88px;
+      left: 8px;
+;
+    }
+    .input-wrapper {
+      display: none;
+    }
+    .RantingVue {
+        display: none;
+    }
+    .add-to-wishlist {
+      display: none;
+    }
+    .actions::before {
+      content: url("@/assets/wishlist.png");
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+    }
+    .coupon {
+    
+      min-width: 328px;
+      height: 75px;
+      opacity: 1;
+      border-width: 1px;
+      border-radius: 8px;
 
+    }
+    .coupon-container {
+      min-width: 328px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 }
 </style>
 
