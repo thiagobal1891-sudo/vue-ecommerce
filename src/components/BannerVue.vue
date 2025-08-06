@@ -30,7 +30,7 @@ export default {
   background-position: center;
   border-radius: 15px;
   overflow: hidden;
-  width: 1436px;
+  width: 100%;
   margin: 20px auto;
   height: 514px;
   display: flex;

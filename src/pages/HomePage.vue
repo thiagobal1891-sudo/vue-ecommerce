@@ -1,5 +1,5 @@
 <template>
-    <BannerVue /> 
+<!--     <BannerVue />  -->
     <ProductList />
     <CollectionsVue />
     <BrandsVue />
@@ -7,7 +7,7 @@
 </template>
 <script>
 
-import BannerVue from '@/components/BannerVue.vue';
+//import BannerVue from '@/components/BannerVue.vue';
 import ProductList from '@/components/ProductList.vue';
 import CollectionsVue from '@/components/CollectionsVue.vue';
 import BannerFooter from '@/components/BannerFooter.vue';
@@ -16,7 +16,7 @@ import BrandsVue from '@/components/BrandsVue.vue';
 export default {
   name: 'HomePage',
   components: {
-    BannerVue,
+  //BannerVue,
     ProductList,
     CollectionsVue,
     BrandsVue,

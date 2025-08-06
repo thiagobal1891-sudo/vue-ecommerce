@@ -77,6 +77,8 @@ const decrease = () => {
 
 
 const totalPrice = computed(() => quantity.value * unitPrice);
+
+
 </script>
 
 <style>
