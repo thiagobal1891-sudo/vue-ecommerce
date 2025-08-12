@@ -37,17 +37,6 @@ export default {
 }
 </script>
 
-/* product-description */
-
-position: absolute;
-width: 1240px;
-height: 258px;
-left: 20px;
-top: 903px;
-
-
-
-
 <style>
 .container {
     display: flex;

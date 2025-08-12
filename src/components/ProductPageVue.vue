@@ -44,6 +44,10 @@
         <p>Get upto 30% Off on order value above $100</p>
         <button>Use Code <strong>ORDER100</strong></button>
       </div>
+      <div class="coupon">
+        <p>Get upto 30% Off on order value above $100</p>
+        <button>Use Code <strong>ORDER100</strong></button>
+      </div>
       </div>
 
      <div class="actions">
@@ -399,18 +403,7 @@ text-align: center;
 vertical-align: middle;
 
 }
-@media screen and (max-width: 768px) {
-    .product-card {
-      flex-wrap: wrap;
-    }
-    .product-card img {
-      min-width: 348px;
-      min-height: 340px;
-      opacity: 1;
-      top: 88px;
-      left: 8px;
-;
-    }
+
     .input-wrapper {
       display: none;
     }
@@ -427,22 +420,124 @@ vertical-align: middle;
       display: flex;
       align-items: center;
     }
-    .coupon {
-    
-      min-width: 328px;
-      height: 75px;
-      opacity: 1;
-      border-width: 1px;
-      border-radius: 8px;
+    @media screen and (max-width: 768px) {
 
-    }
-    .coupon-container {
-      min-width: 328px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  .product-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .product-image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+  }
+
+
+  .product-details {
+    width: 100%;
+    padding: 0;
+  }
+
+  .product-details h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+
+  .price {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .current-price {
+    font-size: 20px;
+  }
+
+  .old-price {
+    font-size: 14px;
+  }
+
+  .discount {
+    font-size: 12px;
+  }
+
+
+  .coupon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+  }
+
+  .coupon {
+    flex: 1 1 calc(50% - 8px);
+    background-color: #eef6ff;
+    border: 1px solid #b3d4fc;
+    padding: 6px;
+    border-radius: 6px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  .coupon p {
+    font-size: 12px;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+  }
+
+  .coupon button {
+    background-color: #dbeeff;
+    border: none;
+    padding: 2px 6px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+
+  .delivery {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 5px;
+  }
+
+  .input-wrapper {
+    width: 100%;
+    padding: 8px;
+  }
+
+
+  .actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .add-to-bag {
+    width: 100%;
+    max-width: 350px;
+    height: 44px;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+ 
+  .add-to-wishlist {
+    display: none;
+  }
 }
+
 </style>
 
 
