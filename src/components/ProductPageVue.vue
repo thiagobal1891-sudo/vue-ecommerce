@@ -8,6 +8,9 @@
     </div>
 
     <div class="product-details">
+    <div class="product-price">
+      
+    
       <h2>Coach</h2>
       <p class="description">Leather Coach Bag with adjustable starps.</p>
 
@@ -16,8 +19,8 @@
         <span class="current-price">${{ totalPrice.toFixed(2) }}</span>
         <span class="old-price">${{ basePrice.toFixed(2) }}</span>
         <span class="discount">50% OFF</span>
-      </div>
-
+    </div>
+</div>
    
       <div class="delivery">
       <div class="delivery-texts">
@@ -424,6 +427,7 @@ vertical-align: middle;
 
   .product-card {
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     gap: 16px;
     padding: 10px;
@@ -440,11 +444,25 @@ vertical-align: middle;
   .product-details {
     width: 100%;
     padding: 0;
+    align-items: left;
+  }
+  .product-price {
+    
+
+
+width: 284px;
+height: 70px;
+left: 16px;
+top: 442px;
+
+
+
   }
 
   .product-details h2 {
     font-size: 20px;
     margin: 0;
+    
   }
 
   .description {
@@ -454,9 +472,9 @@ vertical-align: middle;
 
 
   .price {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 10px;
+    max-width: 400px;
+    text-align: left;
+    justify-content: space-evenly;
   }
 
   .current-price {
