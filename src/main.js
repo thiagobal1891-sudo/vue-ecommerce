@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage.vue'
 import ErrorPage from './pages/ErrorPage.vue'
 import CategoryPage from './pages/CategoryPage.vue'
 import MyCartPage from './pages/MyCartPage.vue'
+import UserProfile from './pages/UserProfile.vue'
 
 const routes = [
     {
@@ -16,6 +17,9 @@ const routes = [
     },
     {
         path:'/MyCart', component: MyCartPage
+    },
+    {
+        path:'/userprofile', component: UserProfile
     },
     {
         path:'/home', component: HomePage
