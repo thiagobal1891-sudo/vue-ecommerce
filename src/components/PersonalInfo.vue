@@ -50,7 +50,11 @@
           <h3>Change Password</h3>
           <div class="datos">
             <label>Current Password</label>
-            <input class="contraseña" type="password" value="********">
+            <input class="contraseña" type="text" v-model="password" v-if="ViewPassword">
+            <input class="contraseña" type="password" v-model="password" v-else>
+            <button class="ojito" @click="ViewPassword =  !ViewPassword" >
+            <FontAwesomeIcon :icon="['fas', 'eye']" />
+            </button>
             <label>New Password</label>
             <input class="contraseña" type="password" value="********">
             <label>Confirm Password</label>
@@ -70,6 +74,8 @@
 
 
 
+
+
 export default {
   name: 'PersonalInfo',
   components: {
@@ -77,8 +83,10 @@ export default {
   },
   data() {
     return {
-      productos: []
-    }
+  productos: [],
+  password: "",
+  ViewPassword: false
+  }
   }
 }
 
@@ -274,6 +282,12 @@ width: 392px;
 .contraseña{
 width: 287px;
 }
+
+.ojito {
+  display: flex;
+  width: 20px;
+}
+
 
 .save-btn {
   color: white;

@@ -2,31 +2,30 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { createPinia } from 'pinia'
+
+// Importar páginas
 import HomePage from './pages/HomePage.vue'
 import ErrorPage from './pages/ErrorPage.vue'
 import CategoryPage from './pages/CategoryPage.vue'
 import MyCartPage from './pages/MyCartPage.vue'
 import UserProfile from './pages/UserProfile.vue'
 
+// FontAwesome imports
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+// Añadir iconos a la librería
+library.add(faEye)
+
+// Configuración de rutas
 const routes = [
-    {
-        path:'/', component: HomePage
-    },
-    {
-        path:'/category', component: CategoryPage
-    },
-    {
-        path:'/MyCart', component: MyCartPage
-    },
-    {
-        path:'/userprofile', component: UserProfile
-    },
-    {
-        path:'/home', component: HomePage
-    },
-    {
-        path: '/:pathMatch(.*)*', component: ErrorPage
-    }
+    { path:'/', component: HomePage },
+    { path:'/category', component: CategoryPage },
+    { path:'/MyCart', component: MyCartPage },
+    { path:'/userprofile', component: UserProfile },
+    { path:'/home', component: HomePage },
+    { path: '/:pathMatch(.*)*', component: ErrorPage }
 ]
 
 const router = createRouter({
@@ -36,6 +35,11 @@ const router = createRouter({
 
 const pinia = createPinia()
 
-const app = createApp(App).use(router);
+const app = createApp(App)
+
+// Registrar FontAwesome globalmente
+app.component('FontAwesomeIcon', FontAwesomeIcon)
+
+app.use(router)
 app.use(pinia)
-app.mount("#app");
+app.mount("#app")
