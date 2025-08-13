@@ -2,22 +2,25 @@
   <div class="product-card">
     <div class="product-image">
       <img
-        src="https://i.pinimg.com/736x/90/93/c9/9093c916433c8daee64115b52c642bc8.jpg"
+        :src="productos.images"
         alt="Leather Coach Bag"
       />
     </div>
 
     <div class="product-details">
-      <h2>Coach</h2>
-      <p class="description">Leather Coach Bag with adjustable starps.</p>
+    <div class="product-price">
+      
+    
+      <h2>{{ productos.title }}</h2>
+      <p class="description">{{productos.description}}</p>
 
      <RantingVue rate="2.5" count="45" id="0"/>
       <div class="price">
         <span class="current-price">${{ totalPrice.toFixed(2) }}</span>
         <span class="old-price">${{ basePrice.toFixed(2) }}</span>
         <span class="discount">50% OFF</span>
-      </div>
-
+    </div>
+</div>
    
       <div class="delivery">
       <div class="delivery-texts">
@@ -39,19 +42,23 @@
         <button @click="increase">+</button>
       </div>
       </div>
-
+      <div class="coupon-container">
       <div class="coupon">
         <p>Get upto 30% Off on order value above $100</p>
         <button>Use Code <strong>ORDER100</strong></button>
       </div>
-
+      <div class="coupon">
+        <p>Get upto 30% Off on order value above $100</p>
+        <button>Use Code <strong>ORDER100</strong></button>
+      </div>
+      </div>
 
      <div class="actions">
         <button class="add-to-bag">
           <img src="@/assets/bag.png" alt="logo" class="logo" />
           <span class="text">Add To Bag</span>
         </button>
-        <div class="actions">
+        <div class="actions_wishlist">
         <button class="add-to-wishlist">
           <img src="@/assets/wishlist.png" alt="logo" class="logo">
           <span class="text_1">Add To Wishlist</span>
@@ -62,23 +69,55 @@
  </div>
 </template>
 
-<script setup>
+<script>
+import axios from "axios";
 import RantingVue from "./RantingVue.vue";
-import { ref, computed } from "vue";
 
-const quantity = ref(1);
-const unitPrice = 39.33;
-const basePrice = 78.66;
+export default {
+  components: {
+    RantingVue,
+  },
+  data() {
+    return {
+      quantity: 1,
+      unitPrice: 39.33,
+      basePrice: 78.66,
+      productos: {
 
-const increase = () => quantity.value++;
-const decrease = () => {
-  if (quantity.value > 1) quantity.value--;
+      },
+    };
+  },
+  computed: {
+    totalPrice() {
+      return this.quantity * this.unitPrice;
+    },
+  },
+  methods: {
+    increase() {
+      this.quantity++;
+    },
+    decrease() {
+      if (this.quantity > 1) {
+        this.quantity--;
+      }
+    },
+    getProducts() {
+      const idParams = this.$route.params.id;
+      axios
+        .get(`https://dummyjson.com/products/${idParams}`)
+        .then((response) => {
+          this.productos = response.data;
+          console.log(typeof this.productos)
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    this.getProducts();
+  },
 };
-
-
-const totalPrice = computed(() => quantity.value * unitPrice);
-
-
 </script>
 
 <style>
@@ -142,33 +181,6 @@ h2{
   letter-spacing: 0%;
   vertical-align: middle;
 
-}
-
-.stars {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin: 10px 0;
-}
-
-.star {
-  width: 20px;
-  height: 20px;
-  fill: #ccc;
-}
-
-polygon::hover {
-    color: rgba(255, 140, 75, 1);
-}
-
-.star.half {
-  fill: url(#halfGrad);
-}
-
-.ratings {
-  margin-left: 10px;
-  font-size: 0.9em;
-  color: #888;
 }
 
 .price {
@@ -348,6 +360,7 @@ flex-grow: 0;
 }
 
 .coupon {
+  width: calc(100% - 30%);
   background-color: #eef6ff;
   padding: 10px;
   margin: 15px 0;
@@ -370,7 +383,14 @@ flex-grow: 0;
 
   gap: 10px;
 }
+.actions_wishlist {
+  display: flex;
+  width: 592px;
+  height: 44px;
+  gap: 24px;
 
+  gap: 10px;
+}
 .add-to-bag,
 .add-to-wishlist {
   justify-content: center;
@@ -419,8 +439,157 @@ letter-spacing: 0%;
 text-align: center;
 vertical-align: middle;
 
-
 }
+
+    .input-wrapper {
+      display: none;
+    }
+    .RantingVue {
+        display: none;
+    }
+    .add-to-wishlist {
+      display: none;
+    }
+    .actions::before {
+      content: url("@/assets/wishlist.png");
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+    }
+    @media screen and (max-width: 768px) {
+
+  .product-card {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .product-image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+  }
+
+
+  .product-details {
+    width: 100%;
+    padding: 0;
+    align-items: left;
+  }
+  .product-price {
+    
+
+
+width: 284px;
+height: 70px;
+left: 16px;
+top: 442px;
+
+
+
+  }
+
+  .product-details h2 {
+    font-size: 20px;
+    margin: 0;
+    
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+
+  .price {
+    max-width: 400px;
+    text-align: left;
+    justify-content: space-evenly;
+  }
+
+  .current-price {
+    font-size: 20px;
+  }
+
+  .old-price {
+    font-size: 14px;
+  }
+
+  .discount {
+    font-size: 12px;
+  }
+
+
+  .coupon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+  }
+
+  .coupon {
+    flex: 1 1 calc(50% - 8px);
+    background-color: #eef6ff;
+    border: 1px solid #b3d4fc;
+    padding: 6px;
+    border-radius: 6px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  .coupon p {
+    font-size: 12px;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+  }
+
+  .coupon button {
+    background-color: #dbeeff;
+    border: none;
+    padding: 2px 6px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+
+  .delivery {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 5px;
+  }
+
+  .input-wrapper {
+    width: 100%;
+    padding: 8px;
+  }
+
+
+  .actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .add-to-bag {
+    width: 100%;
+    max-width: 350px;
+    height: 44px;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+ 
+  .add-to-wishlist {
+    display: none;
+  }
+}
+
 </style>
 
 

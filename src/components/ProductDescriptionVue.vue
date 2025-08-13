@@ -37,17 +37,6 @@ export default {
 }
 </script>
 
-/* product-description */
-
-position: absolute;
-width: 1240px;
-height: 258px;
-left: 20px;
-top: 903px;
-
-
-
-
 <style>
 .container {
     display: flex;
@@ -99,7 +88,7 @@ top: 903px;
    background-color: rgba(27, 75, 102, 1); 
 }
 .tabs button {
-    width: 189px;
+    min-width: 189px;
     height: 32px;
     opacity: 1;
     border-radius: 8px;
@@ -130,7 +119,11 @@ top: 903px;
     letter-spacing: 0%;
 
 }
-
+@media screen and (max-width: 768px){
+    .container {
+       display: none;
+    }
+}
 
 </style>
 

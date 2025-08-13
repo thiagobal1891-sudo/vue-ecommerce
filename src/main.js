@@ -13,7 +13,7 @@ const routes = [
   { path: '/category', component: CategoryPage },
   { path: '/MyCart', component: MyCartPage },
   { path: '/home', component: HomePage },
-  { path: '/ProductView', component: ProductView },
+  { path: '/ProductView/:id', component: ProductView },
   { path: '/:pathMatch(.*)*', component: ErrorPage }
 ]
 

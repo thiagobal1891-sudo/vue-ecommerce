@@ -10,10 +10,13 @@
         </div>
         <div class="ProductList__products">
            <div  class="ProductList__products__card" v-for="product of productos" :key="product.id">
-            <img :src="product.images[0]" alt="" class="ProductList__products__card__img">    
-            <h3>{{product.title}}</h3>
-            <p>{{product.description }}</p>
-            <h4>{{product.price }}</h4>
+            <router-link :to="'/ProductView/' + product.id">
+              <img :src="product.images[0]" alt="" class="ProductList__products__card__img">    
+              <h3>{{product.title}}</h3>
+              <p>{{product.description }}</p>
+              <h4>{{product.price }}</h4>
+            </router-link>
+
            </div>
         </div>
     </div>

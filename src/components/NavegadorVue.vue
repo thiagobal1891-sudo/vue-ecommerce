@@ -20,7 +20,7 @@
       <img class="search-icon" src="./../assets/search.png" alt="buscar">
       <div class="icons">
         <img src="./../assets/icons.png" alt="icons">
-                        <div>{{ count.quantity }}</div>
+        {{ count.quantity }}
       </div>
     </div>
   </header>
