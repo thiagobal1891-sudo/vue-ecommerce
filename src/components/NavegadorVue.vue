@@ -20,6 +20,7 @@
       <img class="search-icon" src="./../assets/search.png" alt="buscar">
       <div class="icons">
         <img src="./../assets/icons.png" alt="icons">
+        {{ count.quantity }}
       </div>
     </div>
   </header>
@@ -47,11 +48,15 @@
 </template>
 
 <script>
+
+import { useCartStore } from '@/stores/cart';
+
 export default {
   name: 'NavegadorVue',
   data() {
     return {
-      busqueda: ''
+      busqueda: '',
+      count: useCartStore()
     };
   }
 };
@@ -73,7 +78,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0 10px;
+
   z-index: 1000;
   background: white;
 }

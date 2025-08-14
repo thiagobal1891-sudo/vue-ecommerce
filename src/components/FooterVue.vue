@@ -194,18 +194,22 @@ export default {
   border-top: 1px solid #4d6e80;
   margin: 24px 0;
 }
+}
 .footer-columns {
   flex-direction: column;
 }
 .footer-right{
   align-items: flex-start;
 }
-}
 @media  screen and (min-width: 768px) {
   hr {
     display: none;
   }
 }
-
+@media (max-width: 400px) {
+  .text {
+    font-size: 14px;
+  }
+}
 </style>
 
