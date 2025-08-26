@@ -9,6 +9,8 @@ import ErrorPage from './pages/ErrorPage.vue'
 import CategoryPage from './pages/CategoryPage.vue'
 import MyCartPage from './pages/MyCartPage.vue'
 import UserProfile from './pages/UserProfile.vue'
+import CheckoutPage from './pages/CheckoutPage.vue'
+
 
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -25,6 +27,7 @@ const routes = [
     { path:'/MyCart', component: MyCartPage },
     { path:'/userprofile', component: UserProfile },
     { path:'/home', component: HomePage },
+    { path:'/Checkout', component: CheckoutPage },
     { path: '/:pathMatch(.*)*', component: ErrorPage }
 ]
 
