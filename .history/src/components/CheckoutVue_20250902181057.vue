@@ -242,7 +242,8 @@ td.subtotal {
   justify-content: flex-end;
   gap: 10px;
   flex-direction: row;
-  width: 100%;         
+  width: 100%;       
+  padding-top: 20px;  
 }
 
     button {

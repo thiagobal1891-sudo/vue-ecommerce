@@ -1,8 +1,8 @@
 <template>
-      <div class="page">
-      <SidebarVue />    
-      <PersonalInfo v-if="ver === 1" />   
-      <CheckoutVue v-if="ver === 2" />
+      <div>    
+    <PersonalInfo v-if="ver === 1" />   
+    <CheckoutVue v-if="ver === 2" />
+    <SidebarVue />
   </div>
 </template>
 <script>
@@ -28,7 +28,5 @@ export default {
 </script>
 
 <style>
-.page{
-      display: flex;
-    }
+
 </style>

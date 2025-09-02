@@ -1,34 +1,29 @@
 <template>
-      <div class="page">
-      <SidebarVue />    
-      <PersonalInfo v-if="ver === 1" />   
-      <CheckoutVue v-if="ver === 2" />
+      <div>
+    <CheckoutVue v-if="ver === 1" />
+    <SidebarVue v-if="ver === 2" />
   </div>
 </template>
 <script>
 
 
 import CheckoutVue from '@/components/CheckoutVue.vue';
-import PersonalInfo from '@/components/PersonalInfo.vue';
 import SidebarVue from '@/components/SidebarVue.vue';
 
 export default {
   name: 'CheckoutPage',
   components: {
     CheckoutVue,
-    PersonalInfo,
     SidebarVue
   },
   data(){
     return{
-      ver: 2
+      ver: 1
     }
   }
 }
 </script>
 
 <style>
-.page{
-      display: flex;
-    }
+
 </style>

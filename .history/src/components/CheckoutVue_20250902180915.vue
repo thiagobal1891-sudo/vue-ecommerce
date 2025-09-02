@@ -239,11 +239,12 @@ td.subtotal {
     }
 .buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; 
   gap: 10px;
+  margin-top: auto;
   flex-direction: row;
-  width: 100%;         
-}
+
+  }
 
     button {
       padding: 10px 20px;
@@ -257,12 +258,11 @@ td.subtotal {
     .btn-reorder {
       background: #1B4B66;
       color: #fff;
+        width: 136px;
     }
     .btn-rating {
       background: #fff;
       color: #1B4B66;
+        width: 136px;
     }
-    .btn-reorder, .btn-rating {
-  width: 136px;
-}
 </style>

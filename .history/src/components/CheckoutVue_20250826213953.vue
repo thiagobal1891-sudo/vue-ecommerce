@@ -1,4 +1,5 @@
 <template>
+<div class="orden-title">Order#874522648</div>
 <div class="container">
 <div class="tabs">
   <button class="tab activo">Items Ordered</button>
@@ -99,7 +100,14 @@ export default {
       
 
     }
-
+    .orden-title {
+      text-align: left;
+      width: 309px;
+      height: 44px;
+      font-family: 'Inter';
+      font-weight: 600;
+      font-size: 34px;
+    }
 
     .tabs {
   display: flex;
@@ -240,10 +248,10 @@ td.subtotal {
 .buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
-  flex-direction: row;
-  width: 100%;         
-}
+  gap: 24px;
+  width: 840px; 
+  margin-top: 35px; 
+  }
 
     button {
       padding: 10px 20px;
@@ -262,7 +270,4 @@ td.subtotal {
       background: #fff;
       color: #1B4B66;
     }
-    .btn-reorder, .btn-rating {
-  width: 136px;
-}
 </style>

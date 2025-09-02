@@ -238,11 +238,12 @@ td.subtotal {
       color: #171520;
     }
 .buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  flex-direction: row;
-  width: 100%;         
+  display: flex;             /* ⬅️ Esto los pone en fila */
+  flex-direction: row;       /* ⬅️ Asegura orientación horizontal (por si acaso) */
+  justify-content: flex-end; /* ⬅️ Los alinea a la derecha */
+  gap: 24px;                 /* ⬅️ Espacio entre botones */
+  margin-top: auto;          /* ⬅️ Empuja hacia abajo si el contenedor usa flex */
+  padding-bottom: 20px;      /* ⬅️ Espacio opcional inferior */
 }
 
     button {
@@ -262,7 +263,4 @@ td.subtotal {
       background: #fff;
       color: #1B4B66;
     }
-    .btn-reorder, .btn-rating {
-  width: 136px;
-}
 </style>

@@ -1,10 +1,11 @@
 <template>
-<div class="container">
+<div class="orden-title">Order#874522648</div>
 <div class="tabs">
   <button class="tab activo">Items Ordered</button>
   <button class="tab">Invoices</button>
   <button class="tab">Order Shipment</button>
 </div>
+  <div class="container">
   <div class="main">
 <div id="items" class="producto">
   <table class="orden-table">
@@ -89,17 +90,25 @@ export default {
     .container {
       display: flex;
       height: 568px;
-      flex-direction: column;
+      
     }
 
     .main {
       width: calc(100% - 286px);
       margin-top: 20px;
-
-      
+      display: flex;
+      flex-direction: column;
 
     }
-
+    .orden-title {
+      margin-bottom: 20px;
+      text-align: left;
+      width: 309px;
+      height: 44px;
+      font-family: 'Inter';
+      font-weight: 600;
+      font-size: 34px;
+    }
 
     .tabs {
   display: flex;
@@ -149,7 +158,7 @@ td.subtotal {
 
   .orden-table{
   border-collapse: collapse;
-  width: 900px;
+  width: 921px;
   table-layout: fixed;
 }
 .orden-table th{
@@ -214,7 +223,7 @@ td.subtotal {
       gap: 20px;
       padding: 20px;
       margin-top: 5px;
-      width: 820px;
+      width: 900px;
     }
     .orden-detalles {
       flex: 1;
@@ -240,10 +249,10 @@ td.subtotal {
 .buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
-  flex-direction: row;
-  width: 100%;         
-}
+  gap: 24px;
+  width: 921px; 
+  margin-top: 35px; 
+  }
 
     button {
       padding: 10px 20px;
@@ -262,7 +271,4 @@ td.subtotal {
       background: #fff;
       color: #1B4B66;
     }
-    .btn-reorder, .btn-rating {
-  width: 136px;
-}
 </style>
