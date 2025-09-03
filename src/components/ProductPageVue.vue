@@ -16,9 +16,9 @@
 
      <RantingVue rate="2.5" count="45" id="0"/>
       <div class="price">
-        <span class="current-price">${{ totalPrice.toFixed(2) }}</span>
-        <span class="old-price">${{ basePrice.toFixed(2) }}</span>
-        <span class="discount">50% OFF</span>
+        <span class="current-price">${{ productos.price }}</span>
+        <span class="old-price">${{ productos.price - productos.price * productos.discountPercentage/100 }}</span>
+        <span class="discount">{{productos.discountPercentage}} % OFF</span>
     </div>
 </div>
    
@@ -54,7 +54,7 @@
       </div>
 
      <div class="actions">
-        <button class="add-to-bag">
+        <button class="add-to-bag" @click="cart()">
           <img src="@/assets/bag.png" alt="logo" class="logo" />
           <span class="text">Add To Bag</span>
         </button>
@@ -72,6 +72,7 @@
 <script>
 import axios from "axios";
 import RantingVue from "./RantingVue.vue";
+import { useCartStore } from "@/stores/cart";
 
 export default {
   components: {
@@ -79,18 +80,15 @@ export default {
   },
   data() {
     return {
-      quantity: 1,
-      unitPrice: 39.33,
       basePrice: 78.66,
+      cartStore: useCartStore(),
+      quantity: 1,
       productos: {
-
       },
     };
   },
   computed: {
-    totalPrice() {
-      return this.quantity * this.unitPrice;
-    },
+   
   },
   methods: {
     increase() {
@@ -103,16 +101,26 @@ export default {
     },
     getProducts() {
       const idParams = this.$route.params.id;
+      
       axios
         .get(`https://dummyjson.com/products/${idParams}`)
         .then((response) => {
           this.productos = response.data;
-          console.log(typeof this.productos)
+          console.log(this.productos)
         })
         .catch((error) => {
           console.log(error);
         });
+
+      let cantidad = this.cartStore.cantidadPorId(idParams)
+      this.quantity = cantidad
     },
+    cart(){
+      let prod = this.productos
+      prod.quantity = this.quantity
+      this.cartStore.agregar(prod)
+      console.log(this.cartStore.cart)
+    }
   },
   mounted() {
     this.getProducts();

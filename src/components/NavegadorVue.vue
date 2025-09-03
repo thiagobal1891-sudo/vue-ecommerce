@@ -19,8 +19,11 @@
       <input class="search" type="text" v-model="busqueda" placeholder="Buscar producto..." />
       <img class="search-icon" src="./../assets/search.png" alt="buscar">
       <div class="icons">
-        <img src="./../assets/icons.png" alt="icons">
-        {{ count.quantity }}
+        <router-link to="/mycart">
+          <img src="./../assets/icons.png" alt="icons">
+          {{ count.quantity }}
+        </router-link>
+
       </div>
     </div>
   </header>
