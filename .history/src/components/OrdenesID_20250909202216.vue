@@ -115,6 +115,7 @@ export default {
   padding: 6px 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
+  justify-content: flex-end;
 }
 
 .tabs {

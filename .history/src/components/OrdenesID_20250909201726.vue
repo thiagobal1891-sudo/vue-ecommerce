@@ -111,7 +111,7 @@ export default {
   cursor: pointer;
 }
 .search {
-  width: 296px;
+  width: 45px;
   padding: 6px 10px;
   border: 1px solid #ddd;
   border-radius: 6px;

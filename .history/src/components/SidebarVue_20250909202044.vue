@@ -2,13 +2,13 @@
   <div class="contenedor">
     <div class="sidebar">
       <div class="buttons">
-        <button :class="{ active: ver === 0 }" @click="cambiarPagina(1)">Personal Information</button>
-        <button :class="{ active: ver === 1 }" @click="cambiarPagina(2)">Refer and Earn</button>
-        <button :class="{ active: ver === 2 }" @click="cambiarPagina(3)">My Orders</button>
-        <button :class="{ active: ver === 3 }" @click="cambiarPagina(4)">My Wishlist</button>
-        <button :class="{ active: ver === 4 }" @click="cambiarPagina(5)">My Reviews</button>
-        <button :class="{ active: ver === 5 }" @click="cambiarPagina(6)">My Address Book</button>
-        <button :class="{ active: ver === 6 }" @click="cambiarPagina(7)">My Saved Cards</button>
+        <button :class="{ active: ver === 0 }" @click="cambiarPagina(0)">Personal Information</button>
+        <button :class="{ active: ver === 1 }" @click="cambiarPagina(1)">Refer and Earn</button>
+        <button :class="{ active: ver === 2 }" @click="cambiarPagina(2)">My Orders</button>
+        <button :class="{ active: ver === 3 }" @click="cambiarPagina(3)">My Wishlist</button>
+        <button :class="{ active: ver === 4 }" @click="cambiarPagina(4)">My Reviews</button>
+        <button :class="{ active: ver === 5 }" @click="cambiarPagina(5)">My Address Book</button>
+        <button :class="{ active: ver === 6 }" @click="cambiarPagina(6)">My Saved Cards</button>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     cambiarPagina(num) {
-      this.ver = num - 1
+      this.ver = num - 0
       this.$emit("changePage", num)
     }
   }
