@@ -140,7 +140,7 @@ export default {
   margin: 0 auto;
   padding: 20px;
   background: white;
-  
+  max-height: calc(100vh - 60px);
 }
 
 .contenido {
