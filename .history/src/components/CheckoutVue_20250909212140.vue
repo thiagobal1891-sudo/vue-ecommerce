@@ -205,7 +205,6 @@ td.subtotal {
 
     .orden-info {
       display: flex;
-      background: #fff;
       border-radius: 8px;
       justify-content: space-between;
       gap: 20px;

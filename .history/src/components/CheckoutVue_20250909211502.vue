@@ -20,13 +20,15 @@
   <tr>
     <td>
       <div class="producto-info">
-      <b>{{ producto.title }}
-        {{producto.category}}</b>
+      <b>{{ producto.title }}</b>
+        <br>
+        <input type="number" value="1" min="1" @change="(e)=>{productos.modificarCantidad(producto.id,producto.quantity )}" v-model="producto.quantity"/>
+        {{ producto.quantity }}<br>
       </div>
     </td>
-    <td class="price">${{ producto.price }}</td>
-    <td class="qty">{{ producto.quantity }}</td>
-    <td class="subtotal">${{ producto.price * producto.quantity }}</td>
+      <div class="price">${{ producto.price }}</div>
+      <div class="qty">1</div>
+      <div class="subtotal">${{ producto.price * producto.quantity }}</div>
   </tr>
   </tbody>
   </table>
