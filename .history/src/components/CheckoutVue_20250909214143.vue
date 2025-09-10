@@ -140,10 +140,6 @@ td.price, td.qty, td.subtotal {
   text-align: left;
 }
 
-td.subtotal {
-  text-align: left;
-}
-
   .orden-table{
   border-collapse: collapse;
   width: 900px;

@@ -136,10 +136,12 @@ export default {
 }
 
 
-td.price, td.qty, td.subtotal {
+td.price  {
   text-align: left;
 }
-
+td.qty {
+  text-align: left;
+}
 td.subtotal {
   text-align: left;
 }

@@ -164,6 +164,11 @@ td.subtotal {
   border-bottom: 1px solid #ccc;
   color: #171520;
 }
+/* Anchos de columna */
+.orden-table th:nth-child(1), .orden-table td:nth-child(1){ width:50%; }
+.orden-table th:nth-child(2), .orden-table td:nth-child(2){ width:15%; }
+.orden-table th:nth-child(3), .orden-table td:nth-child(3){ width:15%; }
+.orden-table th:nth-child(4), .orden-table td:nth-child(4){ width:20%; }
 
 .producto-info{
   display:flex;
@@ -177,7 +182,8 @@ td.subtotal {
 .text-center{ text-align:center; }
 .text-right{ text-align:right; }
 
-
+/* Anula anchos que rompen layout */
+.price, .qty, .subtotal, .info{ width:auto; }
 
 
     .product-info img {

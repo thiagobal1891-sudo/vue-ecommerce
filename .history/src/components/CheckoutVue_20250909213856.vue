@@ -177,7 +177,8 @@ td.subtotal {
 .text-center{ text-align:center; }
 .text-right{ text-align:right; }
 
-
+/* Anula anchos que rompen layout */
+.price, .qty, .subtotal, .info{ width:auto; }
 
 
     .product-info img {
