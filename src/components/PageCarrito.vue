@@ -93,26 +93,7 @@ export default {
 }
 
 
-@media (min-width: 900px) {
-  .carrito {
-    grid-template-columns: 1fr 360px;
-    grid-template-areas:
-      "items total"
-      "cupones cupones";
-  }
-}
 
-@media (max-width: 599px) {
-  .carrito,
-  .items,
-  .item,
-  .total,
-  .cupones {
-    max-width: 212px;
-    width: 100%;   
-    margin: 0 auto; 
-  }
-}
 
 .items { grid-area: items; }
 .total { grid-area: total; align-self: start; }
@@ -238,4 +219,31 @@ export default {
 }
 .cupon-box input { border: none; background: transparent; padding: 12px; flex: 1; outline: none; }
 .cupon-box button { background: transparent; border: none; font-weight: 700; padding: 12px 16px; cursor: pointer; }
+
+@media (min-width: 1100px) {
+  .carrito {
+    grid-template-columns: 1fr 360px;
+    grid-template-areas:
+      "items total"
+      "cupones cupones";
+  }
+}
+
+@media (max-width: 950px) {
+  .carrito,
+  .items,
+  .total,
+  .cupones {
+    max-width: 212px;
+    width: 100%;   
+    margin: 0 auto; 
+  }
+
+    .item {
+    max-width: 212px;
+    width: 100%;   
+    margin: 0 auto; 
+    flex-wrap: wrap;
+  }
+}
 </style>
