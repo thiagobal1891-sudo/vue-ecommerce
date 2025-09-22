@@ -15,6 +15,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import ProductView from './pages/ProductView.vue'
+import ThiagoPage from './pages/ThiagoPage.vue'
 
 
 library.add(faEye)
@@ -22,13 +23,15 @@ library.add(faEye)
 
 const routes = [
     { path:'/', component: HomePage },
-    { path: '/thiago', component: ThiagoPage },
     { path:'/category', component: CategoryPage },
     { path:'/MyCart', component: MyCartPage },
     { path:'/home', component: HomePage },
     { path:'/ProductView/:id', component: ProductView },
     { path:'/Myorders', component: MyordersPage },
     { path: '/:pathMatch(.*)*', component: ErrorPage }
+]
+const routes = [
+    { path:'/Thiago', component: ThiagoPage }
 ]
 
 const router = createRouter({

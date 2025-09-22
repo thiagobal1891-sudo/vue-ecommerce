@@ -9,7 +9,7 @@ import ErrorPage from './pages/ErrorPage.vue'
 import CategoryPage from './pages/CategoryPage.vue'
 import MyCartPage from './pages/MyCartPage.vue'
 import MyordersPage from './pages/MyordersPage.vue'
-import ThiagoPage from './pages/ThiagoPage.vue'
+
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
@@ -22,7 +22,6 @@ library.add(faEye)
 
 const routes = [
     { path:'/', component: HomePage },
-    { path: '/thiago', component: ThiagoPage },
     { path:'/category', component: CategoryPage },
     { path:'/MyCart', component: MyCartPage },
     { path:'/home', component: HomePage },
@@ -30,6 +29,24 @@ const routes = [
     { path:'/Myorders', component: MyordersPage },
     { path: '/:pathMatch(.*)*', component: ErrorPage }
 ]
+
+import JuanPerezPage from "../pages/JuanPerezPage.vue"
+
+const routes = [
+  {
+    path: "/juan-perez",
+    name: "JuanPerez",
+    component: JuanPerezPage,
+  },
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+})
+
+export default router
+
 
 const router = createRouter({
   history: createWebHashHistory(),

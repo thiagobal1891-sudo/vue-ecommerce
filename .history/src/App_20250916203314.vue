@@ -1,15 +1,10 @@
 <template>
   <div class="app">
-    
-    <NavegadorVue v-if="$route.path !== '/thiago'" />
-    
+    <NavegadorVue />
     <router-view />
-
-    
-    <FooterVue v-if="$route.path !== '/thiago'" />
+    <FooterVue />
   </div>
 </template>
-
 
 <script>
 

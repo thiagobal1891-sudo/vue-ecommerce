@@ -22,7 +22,6 @@ library.add(faEye)
 
 const routes = [
     { path:'/', component: HomePage },
-    { path: '/thiago', component: ThiagoPage },
     { path:'/category', component: CategoryPage },
     { path:'/MyCart', component: MyCartPage },
     { path:'/home', component: HomePage },

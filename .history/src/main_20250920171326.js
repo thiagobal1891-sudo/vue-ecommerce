@@ -22,13 +22,14 @@ library.add(faEye)
 
 const routes = [
     { path:'/', component: HomePage },
-    { path: '/thiago', component: ThiagoPage },
+    { path: '/thiago', component: ThiagoPage }
     { path:'/category', component: CategoryPage },
     { path:'/MyCart', component: MyCartPage },
     { path:'/home', component: HomePage },
     { path:'/ProductView/:id', component: ProductView },
     { path:'/Myorders', component: MyordersPage },
-    { path: '/:pathMatch(.*)*', component: ErrorPage }
+    { path: '/:pathMatch(.*)*', component: ErrorPage },
+    
 ]
 
 const router = createRouter({

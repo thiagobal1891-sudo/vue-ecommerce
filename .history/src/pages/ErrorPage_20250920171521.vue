@@ -8,6 +8,7 @@
 export default {
   name: 'ErrorPage',
   components: {
+    ExamenThiago
   },
   data(){
     return{

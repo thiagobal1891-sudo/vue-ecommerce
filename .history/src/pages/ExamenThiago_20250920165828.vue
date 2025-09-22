@@ -1,22 +1,20 @@
 <template>
-    <h1>Hay un error</h1>  
+  <div>
+    <JuanPerez />
+  </div>
 </template>
+
 <script>
-
-
-
+import JuanPerez from "../components/JuanPerez.vue"
 export default {
   name: 'ErrorPage',
   components: {
+
   },
   data(){
     return{
 
     }
   }
-}
+  }
 </script>
-
-<style>
-
-</style>
