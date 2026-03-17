@@ -155,14 +155,13 @@ export default {
     z-index: 1000;
   }
 @media screen and (max-width: 768px) {
-  .nav-mobile {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  .NavegadorVue-mobile-only {
+    display: flex ;
+  }
 }
-}
-.NavegadorVue > div {
+.NavegadorVue div {
   display: flex;
+  justify-content: space-around;
   align-items: center;
   gap: 30px;
 }

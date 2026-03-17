@@ -1,10 +1,4 @@
-<template>
-  <div class="app">
-    <NavegadorVue />
-    <router-view />
-    <FooterVue />
-  </div>
-</template>
+
 
 <script>
 

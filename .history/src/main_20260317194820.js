@@ -9,7 +9,6 @@ import ErrorPage from './pages/ErrorPage.vue'
 import CategoryPage from './pages/CategoryPage.vue'
 import MyCartPage from './pages/MyCartPage.vue'
 import MyordersPage from './pages/MyordersPage.vue'
-import ThiagoPage from './pages/ThiagoPage.vue'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEye } from '@fortawesome/free-solid-svg-icons'

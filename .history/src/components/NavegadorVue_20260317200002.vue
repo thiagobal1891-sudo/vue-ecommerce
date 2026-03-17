@@ -161,8 +161,9 @@ export default {
   z-index: 1000;
 }
 }
-.NavegadorVue > div {
+.NavegadorVue div {
   display: flex;
+  justify-content: space-around;
   align-items: center;
   gap: 30px;
 }

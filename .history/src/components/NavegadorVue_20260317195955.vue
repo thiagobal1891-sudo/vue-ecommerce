@@ -78,7 +78,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
   top: 0;
   left: 0;
 
@@ -161,8 +160,9 @@ export default {
   z-index: 1000;
 }
 }
-.NavegadorVue > div {
+.NavegadorVue div {
   display: flex;
+  justify-content: space-around;
   align-items: center;
   gap: 30px;
 }

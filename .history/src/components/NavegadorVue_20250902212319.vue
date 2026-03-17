@@ -155,32 +155,35 @@ export default {
     z-index: 1000;
   }
 @media screen and (max-width: 768px) {
-  .nav-mobile {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  .NavegadorVue-mobile-only {
+    display: flex !important;
+  }
 }
-}
-.NavegadorVue > div {
+.NavegadorVue div {
   display: flex;
+  justify-content: space-around;
   align-items: center;
   gap: 30px;
 }
 .NavegadorVue {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position: relative;
   width: 100%;
   height: 80px;
   display: flex;
-  align-items: center;
+  align-items: center; 
+  margin-inline: 10px;
   justify-content: space-between;
-  background: white;
+
 }
 .NavegadorVue header{
+
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000; 
+
 }
 .search-container  {
   display: inline-flex;
