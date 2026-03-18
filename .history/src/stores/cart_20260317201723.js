@@ -51,7 +51,7 @@ export const useCartStore = defineStore('cart', {
           quantity: producto.quantity || 1
         })
       } else {
-        // Opcional: podrías sumar si ya existe
+        
         existente.quantity = producto.quantity || 1
       }
     },
@@ -69,17 +69,4 @@ export const useCartStore = defineStore('cart', {
   }
 })
 
-/*
 
-para usar llamamos en el componente o page el store
-
-      import { useCartStore } from '@/stores/cart'
-
-Y lo guardamos en una variable
-
-        data() {
-    return {
-          cart: useCartStore()
-        };
-      },
-*/
