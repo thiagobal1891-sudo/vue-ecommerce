@@ -6,12 +6,8 @@
     <button>➝ See more</button>
   </div>
 </div>
-
 </template>
-
 <script>
-
-
 export default {
   name: 'BannerVue',
   components: {
@@ -22,7 +18,6 @@ export default {
   }
 }
 </script>
-
 <style>
 .banner {
   background-image: url("./../assets/components/BannerVue/imgbanner.jpg");
@@ -64,7 +59,6 @@ export default {
   top: 0;
 
 }
-
 .banner-contenido p {
   font-size: 28px;
   color: #1B4B66;
@@ -72,9 +66,7 @@ export default {
   top: 40%;
   text-align: left;
   font-family: 'Inter', sans-serif;
-
 }
-
 .banner-contenido button {
   background-color: #1B4B66;
   color: white;
@@ -89,7 +81,6 @@ export default {
   position: absolute;
   top: 80%;
 }
-
 .banner-contenido button:hover {
   background-color: #1B4B66;
 }

@@ -1,129 +1,120 @@
 <template>
-<div class="container">
-<div class="tabs-container">
-<div class="tabs">
-    <button> 
-        <span type="text">Product Description</span>
-    </button>
-</div>
-<div class="tabs">
-    <button> 
-        <span type="text">Related Products</span> 
-    </button>
-</div >
-<div class="tabs">
-    <button>
-        <span type="text">Ratings and Reviews</span> 
-    </button>
-</div>
-</div>
-<div class="descriptions">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus scelerisque laoreet tortor cras molestie tincidunt malesuada malesuada. Neque, mauris duis dui id morbi magna. Cras lacus, viverra auctor in turpis est quisque eget tristique. </p>
+    <div class="container">
+    <div class="tabs-container">
+        <button 
+        class="tab"
+        :class="{ active: activeTab === 'description' }"
+        @click="activeTab = 'description'">
+        Product Description
+        </button>
 
-    <p>Dolor augue mattis duis semper gravida enim eu imperdiet sit. Et pharetra platea pretium nec feugiat tincidunt quam leo tristique. Nulla enim consectetur sit et tempus, faucibus leo ac cras. Purus ut non eu mus volutpat. </p> 
+        <button 
+        class="tab"
+        :class="{ active: activeTab === 'related' }"
+        @click="activeTab = 'related'">
+        Related Products
+        </button>
 
-    <p>Eget est vel sagittis amet sit eu eu ullamcorper tellus. Leo mauris, faucibus vulputate adipiscing elementum tristique dictumst augue pellentesque. Justo, sed nunc, pretium turpis scelerisque. Enim urna etiam morbi vestibulum ac dictumst. Ac ut elementum molestie sit felis imperdiet.</p>
-</div>
-</div>
+        <button 
+        class="tab"
+        :class="{ active: activeTab === 'reviews' }"
+        @click="activeTab = 'reviews'">
+        Ratings and Reviews
+        </button>
+    </div>
+    <transition name="fade-slide" mode="out-in">
+        <div :key="activeTab" class="tab-content">
+        <div v-if="activeTab === 'description'">
+            <p>Lorem ipsum dolor sit amet...</p>
+            <p>Dolor augue mattis duis...</p>
+            <p>Eget est vel sagittis...</p>
+        </div>
+        <div v-else-if="activeTab === 'related'">
+            <p>Acá van productos relacionados (grid después )</p>
+        </div>
+        <div v-else>
+            <p>⭐ 4.5 / 5</p>
+            <p>Muy buen producto...</p>
+        </div>
+
+        </div>
+    </transition>
+
+    </div>
 </template>
 <script>
 export default {
-  name: 'ProductDescriptionVue',
-  data() {
+    name: "ProductDescriptionVue",
+    data() {
     return {
-
+        activeTab: "description"
     };
-  }
-}
+    }
+};
 </script>
-
 <style>
 .container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 258px;
-    opacity: 1;
-    margin-bottom: 30px;
-    align-items: start;
-    margin-left: 17px;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
 }
 .tabs-container {
     display: flex;
-   
-    width: calc(100% - 3%);
-    height: 48px;
-    opacity: 1;
-    border-radius: 12px;
-    padding-top: 8px;
-    padding-right: 16px;
-    padding-bottom: 8px;
-    padding-left: 16px;
-    gap: 24px;
-    background-color: rgba(241, 241, 241, 1);
-}
-.tabs span {
-    display: flex;
     justify-content: center;
-    width: 200px;
-    height: 20px;
-    opacity: 1;
-    font-family: Inter;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-    color: rgba(98, 98, 98, 1);
-    border: none;
-
-
+    gap: 60px;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 12px;
 }
-.tabs {
-    display: flex;
-    align-items: center;
-}
-.tabs button:hover {
-   transition: 50ms;
-   background-color: rgba(27, 75, 102, 1); 
-}
-.tabs button {
-    min-width: 189px;
-    height: 32px;
-    opacity: 1;
+.tab {
+    padding: 8px 16px;
     border-radius: 8px;
-    padding-top: 6px;
-    padding-right: 18px;
-    padding-bottom: 6px;
-    padding-left: 18px;
-    gap: 10px;
     border: none;
-}
-.tabs span:hover {
-    color: whitesmoke;
-    transition: 0.3s;
-}
-.descriptions{
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    gap: 20px;
-    width: 1134px;
-    opacity: 1;
-    top: 25px;
-    position: relative;
-    font-family: Inter;
+    background: transparent;
     font-weight: 500;
     font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0%;
-
+    color: #626262;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.tab.active {
+    background: #050505;
+    color: white;
+}
+.tab:hover {
+    background: #050505;
+    color: white;
+}
+.tab-content {
+    margin-top: 25px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+    transition: all 0.25s ease;
+}
+.fade-slide-enter-from {
+    opacity: 0;
+    transform: translateY(10px);
+}
+.fade-slide-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
 }
 @media screen and (max-width: 768px){
     .container {
-       display: none;
+        display: none;
     }
 }
-
+@media (prefers-reduced-motion: reduce) {
+  .tab,
+  .fade-slide-enter-active,
+  .fade-slide-leave-active {
+    transition: none !important;
+  }
+}
 </style>
 

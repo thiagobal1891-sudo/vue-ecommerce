@@ -9,8 +9,6 @@
     <FooterVue v-if="$route.path !== '/thiago'" />
   </div>
 </template>
-
-
 <script>
 
 import FooterVue from './components/FooterVue.vue';
@@ -26,53 +24,61 @@ export default {
   }
 }
 </script>
-
 <style>
-*{
-  margin: 0px;
-  padding: 0px;
-}
-@font-face {
-  font-family: Janna LT;
-  src: url("./assets/janna-lt-regular.ttf");
-  font-weight: bold;
-}
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-
-
-.root{
-  --color-primario: #E61620
-}
-
-#app {
-  
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-h1{
-  background-color: var(--color-primario);
-  font-family: "Janna LT";
-  font-weight: 700;
-}
-
 * {
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+:root {
+  --color-primary: #22c55e;
+  --max-width: 1200px;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      padding: 20px;
-      background-color: rgb(203, 203, 203);
-    }
-    .app{
-      max-width: 1280px;
-      width: 100%;
-      margin: auto;
-      background-color: white;
-    }
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f7f7f7;
+}
+
+#app,
+.app {
+  overflow-x: hidden;
+  width: 100%;
+}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+section {
+  position: relative;
+}
+h1, h2, h3 {
+  letter-spacing: -0.3px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+}
 </style>

@@ -1,65 +1,98 @@
-
 import { defineStore } from 'pinia'
 
 export const useCartStore = defineStore('cart', {
-  state: () => {
-    return {
-      cart: [
-        
-],
-      precio: 50
-    }
-  },
+  state: () => ({
+    cart: JSON.parse(localStorage.getItem('cart')) || [],
+    orders: JSON.parse(localStorage.getItem('orders')) || [],
+    currentPage: 1,
+
+    selectedOrdersCheckout: []
+  }),
 
   getters: {
-    masIva() {
-      return this.precio * 1.22
-    },
-    iva() {
-      return this.precio * 0.22
-    },
-    quantity() {
-      return this.cart.length
-    },
+    totalPrice: (state) =>
+      state.cart.reduce((acc, p) => acc + p.price * p.quantity, 0),
 
+    totalItems: (state) =>
+      state.cart.reduce((acc, p) => acc + p.quantity, 0),
 
-    
-    cantidadPorId() {
-    console.log("entre")
-      return (id) => {
-        const item = this.cart.find(p => p.id === Number(id))
-        console.log(item)
-        return item ? item.quantity : 50
-      }
+    cantidadPorId: (state) => (id) => {
+      const item = state.cart.find(p => p.id === Number(id))
+      return item ? item.quantity : 0
     }
   },
 
   actions: {
-    agregar(producto) {
-      console.log("entre")
-      const existente = this.cart.find(p => p.id === producto.id)
-      if (!existente) {
+    saveCart() {
+      localStorage.setItem('cart', JSON.stringify(this.cart))
+    },
+
+    saveOrders() {
+      localStorage.setItem('orders', JSON.stringify(this.orders))
+    },
+
+    setPage(page) {
+      this.currentPage = page
+    },
+
+    setCheckoutOrders(orders) {
+      this.selectedOrdersCheckout = orders
+    },
+
+    addToCart(product) {
+      const existing = this.cart.find(p => p.id === product.id)
+
+      if (!existing) {
         this.cart.push({
-          ...producto,
-          quantity: producto.quantity || 1
+          ...product,
+          quantity: product.quantity || 1
         })
       } else {
-        
-        existente.quantity = producto.quantity || 1
+        existing.quantity += product.quantity || 1
       }
+
+      this.saveCart()
     },
 
-    quitar(id) {
+    removeFromCart(id) {
       this.cart = this.cart.filter(p => p.id !== id)
+      this.saveCart()
     },
 
-    modificarCantidad(id, nuevaCantidad) {
-      const producto = this.cart.find(p => p.id === id)
-      if (producto) {
-        producto.cantidad = nuevaCantidad
+    updateQuantity(id, quantity) {
+      const product = this.cart.find(p => p.id === id)
+
+      if (product) {
+        product.quantity = quantity < 1 ? 1 : quantity
       }
+
+      this.saveCart()
+    },
+
+    checkout() {
+      if (!this.cart.length) return
+
+      const newOrder = {
+        id: crypto.randomUUID(),
+        date: new Date().toLocaleDateString(),
+
+        items: this.cart.map(p => ({
+          id: p.id,
+          title: p.title,
+          price: p.price,
+          quantity: p.quantity,
+          thumbnail: p.thumbnail
+        })),
+
+        total: this.cart.reduce((acc, p) => acc + p.price * p.quantity, 0),
+        status: "Completed"
+      }
+
+      this.orders.unshift(newOrder)
+      this.saveOrders()
+
+      this.cart = []
+      this.saveCart()
     }
   }
 })
-
-

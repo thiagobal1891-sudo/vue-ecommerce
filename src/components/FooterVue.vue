@@ -1,215 +1,249 @@
-
 <template>
   <footer class="footer">
-   
-    <div class="footer-content desktop-footer">
+    <div class="footer-container">
+
       <div class="footer-columns">
+
         <div class="column">
-          <h3>Shop by Category</h3>
-          <ul>
-            <li>Skincare</li>
-            <li>Personal Care</li>
-            <li>Handbags</li>
-            <li>Apparels</li>
-            <li>Watches</li>
-            <li>Eye Wear</li>
-            <li>Jewellery</li>
+          <h3 @click="toggle('shop')" class="accordion-title">
+            Shop by Category
+            <span class="arrow" :class="{ open: openSection === 'shop' }">+</span>
+          </h3>
+
+<ul :class="{ open: openSection === 'shop' }">
+  <li>
+    <router-link to="/category/skin-care">Skincare</router-link>
+  </li>
+  <li>
+    <router-link to="/category/bauty">Personal Care</router-link>
+  </li>
+  <li>
+    <router-link to="/category/womens-bags">Handbags</router-link>
+  </li>
+  <li>
+    <router-link to="/category/mens-shirts">Apparels</router-link>
+  </li>
+  <li>
+    <router-link to="/category/mens-watches">Watches</router-link>
+  </li>
+</ul>
+        </div>
+
+        <div class="column">
+          <h3 @click="toggle('about')" class="accordion-title">
+            About
+            <span class="arrow" :class="{ open: openSection === 'about' }">+</span>
+          </h3>
+
+          <ul :class="{ open: openSection === 'about' }">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
           </ul>
         </div>
 
         <div class="column">
-          <h3>About</h3>
-          <ul>
-            <li>Contact Us</li>
-            <li>About Us</li>
-            <li>Careers</li>
-            <li>Press</li>
+          <h3 @click="toggle('policy')" class="accordion-title">
+            Policy
+            <span class="arrow" :class="{ open: openSection === 'policy' }">+</span>
+          </h3>
+
+          <ul :class="{ open: openSection === 'policy' }">
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Privacy</a></li>
           </ul>
         </div>
 
-        <div class="column">
-          <h3>Policy</h3>
-          <ul>
-            <li>Return Policy</li>
-            <li>Terms of Use</li>
-            <li>Sitemap</li>
-            <li>Security</li>
-            <li>Privacy</li>
-            <li>EPR Compliance</li>
-          </ul>
+        <div class="column social">
+          <h3>Follow Us</h3>
+
+          <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+
+          <div class="location">
+            <img src="../assets/location.png" alt="location">
+            United States
+          </div>
         </div>
+
       </div>
-      
-       <hr />   
-   
-      <div class="footer-right">
-       
-        <div class="social-icons">
-          <img src="../assets/redeslogo.png" alt="social-media">
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-youtube"></i>
-        </div>
 
-        <div class="location">
-          <i class="fas fa-map-marker-alt"></i>
-          <img src="../assets/location.png" alt="">
-          United States
-        </div>
+      <div class="footer-divider"></div>
 
+      <div class="footer-bottom">
         <div class="copyright">
-          © 2021 | Cora Leviene All Rights Reserved
+          © 2026 Thiago Baltrons — All Rights Reserved
         </div>
       </div>
+
     </div>
 
   </footer>
 </template>
 <script>
 export default {
-  name: 'FooterVue',
+  name: "FooterVue",
+
   data() {
     return {
-
+      openSection: null
     };
+  },
+
+  methods: {
+    toggle(section) {
+      if (window.innerWidth > 640) return;
+      this.openSection =
+        this.openSection === section ? null : section;
+    },
+    goToCategory(slug) {
+      this.$router.push(`/category/${slug.toLowerCase()}`);
+    },
   }
-}
+};
 </script>
-
-
-
-
-<style scoped>
-
-.copyright {
-  display: flex;
-  text-align: left;
-  color: #B6B6B6;
-}
-
-.footer-columns {
-  display: flex;
-  text-align: left;
-}
-
+<style>
 .footer {
-  background-color: #194b63;
-  color: #c0d9dd;
-  font-family: 'Inter', sans-serif;
-  padding: 40px 24px;
-  width: 100%;
-
+  background: #0a0a0a;
+  color: #888;
+  margin-top: 0;
 }
-
-
-.desktop-footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 80px 40px 40px;
 }
-
 .footer-columns {
-  display: flex;
-  gap: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 45px;
 }
-
 .column h3 {
   color: #ffffff;
-  margin-bottom: 10px;
-  font-size: 17px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: 600;
 }
- 
 .column ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
-
 .column li {
-  margin-bottom: 8px;
-  font-size: 15px;
+  margin-bottom: 12px;
 }
-
-.footer-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
-  text-align: right;
+.column a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+.column a:hover {
+  color: #ffffff;
 }
 
 .social-icons {
   display: flex;
-  font-size: 20px;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.social-icons i {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #666;
+  transition: all 0.3s ease;
+}
+.social-icons i:hover {
+  border-color: rgba(255,255,255,0.4);
+  color: white;
 }
 
 .location {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-family: Inter;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 0%;
-  color: #ffff;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+}
+.location img {
+  width: 14px;
+  opacity: 0.5;
 }
 
-
-
-.footer-section {
-  margin-bottom: 24px;
+.footer-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 60px 0 32px;
 }
-
-.footer-section h3 {
-  color: #ffffff;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-section li {
-  margin-bottom: 7px;
-  font-size: 14px;
-}
-
-.inline-links {
+.footer-bottom {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  font-size: 14px;
+  justify-content: center;
 }
-@media screen and (max-width: 768px) {
- hr {
-  position: relative;
-  right: 24px;
-  width: 100vw;
-  border: none;
-  border-top: 1px solid #4d6e80;
-  margin: 24px 0;
+.copyright {
+  font-size: 13px;
+  color: #444;
+  letter-spacing: 0.02em;
 }
-}
-.footer-columns {
-  flex-direction: column;
-}
-.footer-right{
-  align-items: flex-start;
-}
-@media  screen and (min-width: 768px) {
-  hr {
-    display: none;
-  }
-}
-@media (max-width: 400px) {
-  .text {
-    font-size: 14px;
-  }
-}
-</style>
 
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow {
+  display: none;
+  transition: 0.25s;
+}
+.arrow.open {
+  transform: rotate(45deg);
+}
+@media (max-width: 1024px) {
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+@media (max-width: 640px) {
+  .footer-container {
+    padding: 50px 20px 30px;
+  }
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .arrow {
+    display: block;
+  }
+  .column ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.35s ease;
+  }
+  .column ul.open {
+    max-height: 300px;
+    margin-top: 10px;
+  }
+  .footer-bottom {
+    justify-content: flex-start;
+  }
+}
+
+</style>

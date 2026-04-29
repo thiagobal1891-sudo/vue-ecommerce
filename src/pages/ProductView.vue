@@ -3,7 +3,6 @@
     <ProductDescriptionVue />
 </template>
 <script>
-
 import ProductPageVue from '@/components/ProductPageVue.vue';
 import ProductDescriptionVue from '@/components/ProductDescriptionVue.vue'
 export default {
@@ -19,7 +18,6 @@ export default {
   }
 }
 </script>
-
 <style>
 .text-header {
   display: none;
