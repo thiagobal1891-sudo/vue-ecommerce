@@ -1,18 +1,7 @@
-# 🧠 Vue State Management Demo
+E-commerce moderno desarrollado con Vue 3, enfocado en experiencia de usuario, arquitectura escalable y manejo de estado con Pinia.
 
-Proyecto enfocado en demostrar manejo de estado global y lógica de carrito usando Vue 3 y Pinia.
-
-## 🎯 Objetivo
-Explorar:
-- Manejo de estado con Pinia
-- Comunicación entre componentes
-- Lógica de carrito (add/remove/update)
-- Búsqueda de productos
-
-## 🛠️ Tecnologías
-- Vue 3
-- Pinia
-- Vue Router
-
-## ⚠️ Nota
-Este proyecto no está enfocado en UI/UX sino en la lógica interna y arquitectura.
+Features:
+- Carrito dinámico
+- Búsqueda en tiempo real
+- UI responsive
+- Animaciones modernas
